@@ -1,3 +1,3 @@
-function shoppingcart(){
-
+function show_cart() {
+  
 }
