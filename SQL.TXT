@@ -1,0 +1,17 @@
+CREATE TABLE INVENTORY (
+    shirtID       VARCHAR (20)  NOT NULL  PRIMARY KEY,
+    price         FLOAT         NOT NULL,
+    quantity      INT NOT NULL,
+    size          VARCHAR(20),
+    color         VARCHAR(20),
+    sleeve        BOOLEAN       NOT NULL
+);
+
+CREATE TABLE USERS(
+    email         VARCHAR(75) NOT NULL  PRIMARY KEY,
+    user_name     VARCHAR(50) NOT NULL,
+    password      VARCHAR(25) NOT NULL,
+    cc_num        VARCHAR(25) NOT NULL,
+    mail_address  VARCHAR(90) NOT NULL,
+    reward_points INT         NOT NULL
+);
