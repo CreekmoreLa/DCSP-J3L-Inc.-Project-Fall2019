@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Login</title>
+    </head>
+    <body>
+      <h1>Login</h1>
+      <form name="login">
+        Username<input type="text" name="username"/>
+        Password<input type="password" name="pssword"/>
+        <input type="button" onclick="loginus(login)" value="Login"/>
+        <input type="reset" value="Cancel"/>
+      </form>
+      <script language="javascript">
+        function loginus(form){
+          if(form.username.value == "user_name" && form.pssword.value == "password"){
+            window.open('homepage.html')
+          }
+          else{
+            alert("Something is not right!")
+          }
+        }
+      </script>
+    </body>
+</html>
