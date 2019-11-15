@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
       <title>Login</title>
@@ -6,16 +7,25 @@
     <body>
       <h1>Login</h1>
       <form name="login">
+        <!--Collect username and password-->
         Username<input type="text" name="username"/>
         Password<input type="password" name="pssword"/>
+
+        <!--Allow the user to send login information to validate-->
         <input type="button" onclick="loginus(login)" value="Login"/>
         <input type="reset" value="Cancel"/>
       </form>
       <script language="javascript">
+
+        //Validate
         function loginus(form){
+
+          //Redirect if correct
           if(form.username.value == "user_name" && form.pssword.value == "password"){
-            window.open('homepage.html')
+            window.location('homepage.html')
           }
+
+          //Inform of error if invalid
           else{
             alert("Something is not right!")
           }
