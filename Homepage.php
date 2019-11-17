@@ -30,12 +30,12 @@
         echo '
         <table>
           <tr>
-            <th colspan="1">Shirt ID</th>
+            <th colspan="1">ShirtID</th>
             <th colspan="1">Price</th>
-            <th colspan="1">Quantity in Stock</th>
+            <th colspan="1">Quantity</th>
             <th colspan="1">Size</th>
             <th colspan="1">Color</th>
-            <th colspan="1">Long or Short Sleeve</th>
+            <th colspan="1">Sleeve Length</th>
           </tr>';
 
         while($row = $result->fetch_array()) {
@@ -47,7 +47,7 @@
               <td>'. $row[quantity] . '</td>
               <td>'. $row[size] . '</td>
               <td>'. $row[color] . '</td>
-              <td>'. $row[color] . '</td>
+              <td>'. $row[sleeve] . '</td>
             </tr>';
 
 
