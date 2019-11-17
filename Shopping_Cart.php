@@ -2,7 +2,11 @@
 
 class shopping_cart() {
 
-$shopping_cart = array();
+public $shopping_cart;
+
+public function shopping_cart($shirtID) {
+  $shopping_cart = array($shirtID);
+}
 
 public function add_item($shirtID)
 {
@@ -19,7 +23,7 @@ public function remove_item($shirtID)
 
 public function view_item($shirtID)
 {
-  // still thinking about this one...
+  return $shirtID;
 }
 
 public function purchase($shirtID)
@@ -27,7 +31,7 @@ public function purchase($shirtID)
   foreach ($shopping_cart as $value) {
     unset($shopping_cart[$value]);
   }
-  
+
 }
 
 }

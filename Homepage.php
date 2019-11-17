@@ -31,7 +31,9 @@
     <br> <h2> These are the shirts that we currently have in stock: </h2> <br>
 
     <?php
+
     require_once('login.php');
+
       $conn = new mysqli($hn, $un, $pw, $db);
       if ($conn->connect_error)
           die($conn->connect_error);
@@ -54,7 +56,7 @@
         while($row = $result->fetch_array()) {
 
           echo '
-            <tr id="id">
+            <tr id="'. $row[shirtID] . '">
               <td>'. $row[shirtID] . '</td>
               <td>'. $row[price] . '</td>
               <td>'. $row[quantity] . '</td>
