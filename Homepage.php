@@ -5,6 +5,18 @@
 
     <title>J3L's Shirt Shop Home Page</title>
 
+    <style>
+            td, th {
+            border: 1px solid;
+            text-align: center;
+            padding: 0.5em;
+            }
+
+            tbody {
+            width:25%
+            }
+    </style>
+
 </head>
 
 <body>
@@ -36,20 +48,21 @@
             <th colspan="1">Size</th>
             <th colspan="1">Color</th>
             <th colspan="1">Sleeve Length</th>
+            <th colspan="1">Purchase?</th>
           </tr>';
 
         while($row = $result->fetch_array()) {
 
           echo '
-            <tr>
+            <tr id="id">
               <td>'. $row[shirtID] . '</td>
               <td>'. $row[price] . '</td>
               <td>'. $row[quantity] . '</td>
               <td>'. $row[size] . '</td>
               <td>'. $row[color] . '</td>
               <td>'. $row[sleeve] . '</td>
+              <td> <input type="button" id="add_to_cart" onclick="" value="Add to Cart"> </td>
             </tr>';
-
 
         }
         echo '</table>';
