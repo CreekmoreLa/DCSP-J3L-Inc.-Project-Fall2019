@@ -14,7 +14,9 @@
     <input type="text" id="search_bar" onkeyup="myFunction()" placeholder="Search here...">
 
 
-    <br> <h1> Welcome to the Homepage of J3L's Shirt Shop!</h1> <br>
+    <br> <h1> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
+
+    <br> <h2> These are the shirts that we currently have in stock: </h2> <br>
 
     <?php
     require_once('login.php');
