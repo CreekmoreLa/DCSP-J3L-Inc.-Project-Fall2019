@@ -1,33 +1,32 @@
 <?php
 
-class shopping_cart() {
+class user() {
 
-$shopping_cart = array();
 
-public function add_item($shirtID)
+
+public function login()
 {
-  array_push($shopping_cart, $shirtID);
+
 }
 
-public function remove_item($shirtID)
+public function logout()
 {
-  foreach (array_keys($shopping_cart, $shirtID) as $value) {
-    unset($shopping_cart[$key]);
-  }
-  $shopping_cart = array_values($shopping_cart);
+
 }
 
-public function view_item($shirtID)
+public function create_account()
 {
-  // still thinking about this one...
+  
 }
 
-public function purchase($shirtID)
+public function check_AdminStatus()
 {
-  foreach ($shopping_cart as $value) {
-    unset($shopping_cart[$value]);
-  }
 
+}
+
+public function view_Cart()
+{
+  // code...
 }
 
 }
