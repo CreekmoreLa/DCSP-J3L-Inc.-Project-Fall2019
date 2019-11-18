@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
     session_start();
  //
     require_once('login.php');
@@ -7,13 +6,6 @@
     $conn = new mysqli($hn, $un, $pw, $db);
     if ($conn->connect_error)
         die($conn->connect_error);
-=======
-    $servername = "localhost";
-    $username = "username";
-    $password = "password";
-   
-    $conn = new mysqli($servername, $username, $password);
->>>>>>> 84c4604d688ffcec1f1309eca93df22919a64e6f
 
     $query = "SELECT * FROM mailing_address WHERE email = "" AND password = """
     $query2 = "SELECT * FROM username WHERE email = "" AND password = """
@@ -26,14 +18,14 @@
         echo 'Welcome to your Account Page ' . user_name . "!";
         echo 'Rewards Points: ' . reward_points;
         echo 'Mailing Address: ' . mail_address;
-        echo 'Credit Card info: ' . cc_num; 
+        echo 'Credit Card info: ' . cc_num;
     }
     elif ($_SESSION['Logged in as Admin'] = true)
     {
         echo 'Welcome Admin' . user_name . "!";
         echo 'Rewards Points: ' . reward_points;
         echo 'Mailing Address: ' . mail_address;
-        echo 'Credit Card info: ' . cc_num; 
+        echo 'Credit Card info: ' . cc_num;
     }
-    
+
 ?>
