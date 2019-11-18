@@ -1,6 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>J3L's Shirt Shop Shopping Cart View</title>
+
+    <style>
+        td, th {
+        border: 1px solid;
+        text-align: center;
+        padding: 0.5em;
+        }
+
+        tbody {
+        width:25%
+        }
+    </style>
+
+</head>
+
+<body>
+  <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
+
 <?php
 
-class shopping_cart() {
+class shopping_cart {
 
 public $shopping_cart;
 
@@ -36,4 +60,36 @@ public function purchase($shirtID)
 
 }
 
+
+
+
+
+  $shirtID = $_POST['shirt'];
+  $current_cart = new shopping_cart($shirtID);
+
+    echo '
+    <table>
+      <tr>
+        <th colspan="1">ShirtID</th>
+        <th colspan="1">Price</th>
+        <th colspan="1">Quantity</th>
+        <th colspan="1">Size</th>
+        <th colspan="1">Color</th>
+        <th colspan="1">Sleeve Length</th>
+      </tr>';
+
+
+      echo '
+        <tr>
+          <td>'. $current_cart->view_item($shirtID) . '</td>
+
+        </tr>';
+
+
+    echo '</table>';
+
 ?>
+
+</body>
+
+</html>

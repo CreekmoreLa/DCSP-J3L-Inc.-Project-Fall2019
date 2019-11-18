@@ -6,22 +6,22 @@
     <title>J3L's Shirt Shop Home Page</title>
 
     <style>
-            td, th {
-            border: 1px solid;
-            text-align: center;
-            padding: 0.5em;
-            }
+        td, th {
+        border: 1px solid;
+        text-align: center;
+        padding: 0.5em;
+        }
 
-            tbody {
-            width:25%
-            }
+        tbody {
+        width:25%
+        }
     </style>
 
 </head>
 
 <body>
 
-    <input type="button" id="shopping_cart" onclick="shopping_cart()" value="Shopping Cart">
+    <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
 
     <input type="text" id="search_bar" onkeyup="myFunction()" placeholder="Search here...">
 
@@ -63,13 +63,26 @@
               <td>'. $row[size] . '</td>
               <td>'. $row[color] . '</td>
               <td>'. $row[sleeve] . '</td>
-              <td> <input type="button" id="add_to_cart" onclick="" value="Add to Cart"> </td>
+              <td> <input type="button" id="add_to_cart" onclick="ajax()" value="Add to Cart"> </td>
             </tr>';
 
         }
         echo '</table>';
 
     ?>
+    <script>
+    function ajax() {
+      var shirt = document.getElementById("000121").value;
+      $.ajax({
+        url: "Shopping_Cart.php",
+        type: "POST",
+        data: { shirt: shirt },
+        success: function(data) {
+            $('#output').html(data);
+        },
+      });
+    }
+    </script>
 
 </body>
 
