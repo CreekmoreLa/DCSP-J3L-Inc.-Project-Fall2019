@@ -1,6 +1,4 @@
 <?php
-    session_start();
-
     $servername = "localhost";
     $username = "username";
     $password = "password";
@@ -22,7 +20,7 @@
     }
     elif ($_SESSION['Logged in as Admin'] = true)
     {
-        echo 'Welcome Admin' . user_name . "!"r;
+        echo 'Welcome Admin' . user_name . "!";
         echo 'Rewards Points: ' . reward_points;
         echo 'Mailing Address: ' . mail_address;
         echo 'Credit Card info: ' . cc_num; 
