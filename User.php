@@ -6,11 +6,11 @@ class user() {
 
   public function login(){
     if (isset($_SESSION['Logged in as User']) && !(empty($_SESSION['Logged in as User']))) {
-      header("Location: user_page.php");
+      header("Location: Homepage.php");
     }
 
     else if (isset($_SESSION['Logged in as Admin']) && !(empty($_SESSION['Logged in as Admin']))) {
-      header("Location: admin_page.php");
+      header("Location: Homepage.php");
     }
 
     require_once('login.php');
@@ -19,10 +19,10 @@ class user() {
 
     if ($connection->connect_error) die($connection->connect_error);
 
-    $username = stripslashes($_POST['username']);
+    $user_name = stripslashes($_POST['user_name']);
     $password = stripslashes($_POST['password']);
 
-    $query = "SELECT * FROM lab4_users WHERE username = '$username'";
+    $query = "SELECT * FROM Users WHERE user_name = '$user_name'";
     $result = $connection->query($query);
     $row = $result->fetch_array();
 
@@ -45,21 +45,19 @@ class user() {
 
   public function check_AdminStatus(){
     if (($password == $row['password']) && ($row['type'] == 'user')) {
-            $full_name = $row['forename'] .= " ";
-            $full_name = $full_name .= $row['surname'];
-            $cookie_name = 'User';
-            setcookie($cookie_name, $full_name);
-            $_SESSION['Logged in as User'] = true;
-            header("Location: user_page.php");
+        $cookie_name = 'User';
+        setcookie($cookie_name, $user_name);
+        $_SESSION['Logged in as User'] = true;
+        header("Location: Homepage.php");
+
     }
 
     else if (($password == $row['password']) && ($row['type'] == 'admin')) {
-            $full_name = $row['forename'] .= " ";
-            $full_name = $full_name .= $row['surname'];
-            $cookie_name = 'Admin';
-            setcookie($cookie_name, $full_name);
-            $_SESSION['Logged in as Admin'] = true;
-            header("Location: admin_page.php");
+        $cookie_name = 'Admin';
+        setcookie($cookie_name, $user_name);
+        $_SESSION['Logged in as Admin'] = true;
+        header("Location: Homepage.php");
+
     }
   }
 

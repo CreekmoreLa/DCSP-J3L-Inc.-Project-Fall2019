@@ -17,46 +17,43 @@
         session_start();
 
         if (isset($_SESSION['Logged in as User']) && !(empty($_SESSION['Logged in as User']))) {
-          header("Location: user_page.php");
+          header("Location: Homepage.php");
         }
 
         else if (isset($_SESSION['Logged in as Admin']) && !(empty($_SESSION['Logged in as Admin']))) {
-          header("Location: admin_page.php");
+          header("Location: Homepage.php");
         }
 
         $connection = new mysqli($hn, $un, $pw, $db);
 
         if ($connection->connect_error) die($connection->connect_error);
 
-        $username = stripslashes($_POST['username']);
+        $user_name = stripslashes($_POST['email']);
         $password = stripslashes($_POST['password']);
 
-        $query = "SELECT * FROM lab4_users WHERE username = '$username'";
+        $query = "SELECT * FROM Users WHERE user_name = '$user_name'";
         $result = $connection->query($query);
         $row = $result->fetch_array();
 
-        if (!(empty($_POST['username'])) && !(empty($_POST['password']))) {
 
-            if (($password == $row['password']) && ($row['type'] == 'user')) {
-                    $full_name = $row['forename'] .= " ";
-                    $full_name = $full_name .= $row['surname'];
-                    $cookie_name = 'User';
-                    setcookie($cookie_name, $full_name);
-                    $_SESSION['Logged in as User'] = true;
-                    header("Location: user_page.php");
+        if (!(empty($_POST['email'])) && !(empty($_POST['password']))) {
+
+            if (($password == $row['password']) && ($password != 'makemeadmin')) {
+                $cookie_name = 'User';
+                setcookie($cookie_name, $user_name);
+                $_SESSION['Logged in as User'] = true;
+                header("Location: Homepage.php");
             }
 
-            else if (($password == $row['password']) && ($row['type'] == 'admin')) {
-                    $full_name = $row['forename'] .= " ";
-                    $full_name = $full_name .= $row['surname'];
-                    $cookie_name = 'Admin';
-                    setcookie($cookie_name, $full_name);
-                    $_SESSION['Logged in as Admin'] = true;
-                    header("Location: admin_page.php");
+            else if (($password == $row['password']) && ($password == 'makemeadmin')) {
+                $cookie_name = 'Admin';
+                setcookie($cookie_name, $user_name);
+                $_SESSION['Logged in as Admin'] = true;
+                header("Location: Homepage.php");
             }
 
             else {
-              $error_msg = "You have entered an incorrect username/password combination. Please try again.";
+              $error_login = "You have entered something incorrectly.";
             }
         }
 
@@ -70,7 +67,7 @@
 
         <form method="post" action="login_page.php">
             <label>Username: </label>
-            <input type="text" name="username"> <br>
+            <input type="email" name="email"> <br>
             <label>Password: </label>
             <input type="password" name="password"> <br>
             <input type="submit" value="Log in">
