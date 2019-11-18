@@ -1,21 +1,31 @@
 <?php
-    //$conn = ;
+    session_start();
+
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
+   
+    $conn = new mysqli($servername, $username, $password);
+
+    $query = "SELECT * FROM mailing_address WHERE email = "" AND password = """
+    $query2 = "SELECT * FROM username WHERE email = "" AND password = """
+    $query3 = "SELECT * FROM credit_card WHERE email = "" AND password = """
 
     session_start();
 
     if ($_SESSION['Logged in as User'] = true)
     {
-        echo 'Welcome to your Account Page!';
-        echo 'Username: ' . //username;
-        echo 'Mailing Address: ' . //mailingAddress;
-        echo 'Credit Card: ' . //creditCard; 
+        echo 'Welcome to your Account Page ' . user_name . "!";
+        echo 'Rewards Points: ' . reward_points;
+        echo 'Mailing Address: ' . mail_address;
+        echo 'Credit Card info: ' . cc_num; 
     }
     elif ($_SESSION['Logged in as Admin'] = true)
     {
-        echo 'Welcome Admin!';
-        echo 'Username: ' . //username;
-        echo 'Mailing Address: ' . //mailingAddress;
-        echo 'Credit Card: ' . //creditCard; 
+        echo 'Welcome Admin' . user_name . "!"r;
+        echo 'Rewards Points: ' . reward_points;
+        echo 'Mailing Address: ' . mail_address;
+        echo 'Credit Card info: ' . cc_num; 
     }
     
 ?>
