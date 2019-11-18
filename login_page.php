@@ -59,14 +59,14 @@
 
         ?>
         <h1>Welcome to <span style="font-style:italic; font-weight:bold; color: maroon">
-                Great Web Application</span>!</h1>
+                J3L Inc.</span>!</h1>
 
         <p style="color: red">
         <?php echo "$error_msg" ?>
         </p>
 
         <form method="post" action="login_page.php">
-            <label>Username: </label>
+            <label>Email: </label>
             <input type="email" name="email"> <br>
             <label>Password: </label>
             <input type="password" name="password"> <br>
