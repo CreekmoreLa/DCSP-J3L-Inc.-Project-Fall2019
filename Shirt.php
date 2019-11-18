@@ -1,6 +1,6 @@
 <?php
 
-include_once(login.php);
+require_once('login.php');
 
 $connection = new mysqli($hn, $un, $pw, $db);
 
