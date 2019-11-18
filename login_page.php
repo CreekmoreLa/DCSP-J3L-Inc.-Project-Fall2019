@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Log in to Website</title>
+        <title>Log in to J3L Inc., the Shirt Store for You!</title>
         <style>
             input {
                 margin-bottom: 0.5em;
