@@ -11,7 +11,7 @@
 
   <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
 
-  <input type="text" id="search_bar" onkeyup="myFunction()" placeholder="Search here...">
+  <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
 
 
   <br> <h1> Welcome to the Account Page of J3L's Shirt Shop! </h1> <br>
@@ -26,9 +26,9 @@
           die($conn->connect_error);
 
       // TODO: pull from cookie or session...
-      $user_name = ;
+      $user_name = "" ;
 
-      $query = "SELECT email, user_name, cc_num, mail_address, reward_points FROM USERS WHERE user_name = "$user_name"";
+      $query = "SELECT email, user_name, cc_num, mail_address, reward_points FROM USERS WHERE user_name = '$user_name'";
       $result = $conn->query($query);
 
       while($row = $result->fetch_array()) {
