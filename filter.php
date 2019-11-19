@@ -1,10 +1,9 @@
 <?php
 session_start();
+require_once('login.php');
 
 $conn = new mysqli($hn, $un, $pw, $db)
-if ($conn->connect_error){
-  die("Connection Failed: " . $conn->connect_error);
-}
+
 
 $sql = "SELECT price, quantity, size, color, sleeve FROM INVENTORY";
 $result = $conn->query($sql);
