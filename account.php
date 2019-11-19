@@ -26,7 +26,9 @@
           die($conn->connect_error);
 
       // TODO: pull from cookie or session...
-      $user_name = "" ;
+      $cookie_name = "user";
+      $cookie_value = user_name;
+      setcookie($cookie_name, $cookie_value, time() + (86400 *30), "/");
 
       $query = "SELECT email, user_name, cc_num, mail_address, reward_points FROM USERS WHERE user_name = '$user_name'";
       $result = $conn->query($query);
