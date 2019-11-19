@@ -23,7 +23,7 @@
 
     <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
 
-    <input type="text" id="search_bar" onkeyup="myFunction()" placeholder="Search here...">
+    <input type="text" id="search_bar" onkeyup="document.location.href='filter.php'" placeholder="Search here...">
 
     <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
 
