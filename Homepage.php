@@ -25,6 +25,8 @@
 
     <input type="text" id="search_bar" onkeyup="myFunction()" placeholder="Search here...">
 
+    <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
+
 
     <br> <h1> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
 

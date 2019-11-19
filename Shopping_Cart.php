@@ -20,8 +20,10 @@
 </head>
 
 <body>
-  <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
 
+  <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
+  <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
+  
 <?php
 
 class shopping_cart {
