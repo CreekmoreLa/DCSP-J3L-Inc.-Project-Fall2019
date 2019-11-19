@@ -2,8 +2,6 @@
 session_start();
 require_once('login.php');
 
-
-
 if(isset($_POST['search']))
 {
   $valueToSearch = $_POST['valueToSearch'];
@@ -20,9 +18,6 @@ function filterTable($query)
   $filter_result = mysqli_query($conn, $query);
   return $filter_result
 }
-
-
-$conn->close();
 
 ?>
 <!DOCTYPE html>
