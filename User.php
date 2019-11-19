@@ -1,4 +1,8 @@
 <?php
+require_once('login_page.php');
+require_once('logout_page.php');
+require_once('make_account.php');
+require_once('Shopping_Cart');
 
 class user() {
 

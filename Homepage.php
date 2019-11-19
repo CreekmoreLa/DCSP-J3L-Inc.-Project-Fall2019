@@ -32,6 +32,8 @@
 
     <br> <h2> These are the shirts that we currently have in stock: </h2> <br>
 
+    <form method="post" action="Shopping_Cart.php">
+
     <?php
 
     require_once('login.php');
@@ -55,36 +57,37 @@
             <th colspan="1">Purchase?</th>
           </tr>';
 
+        $cart = [];
         while($row = $result->fetch_array()) {
 
           echo '
-            <tr id="'. $row[shirtID] . '">
+            <tr id="'. $row[shirtID] . '" >
               <td>'. $row[shirtID] . '</td>
               <td>'. $row[price] . '</td>
               <td>'. $row[quantity] . '</td>
               <td>'. $row[size] . '</td>
               <td>'. $row[color] . '</td>
               <td>'. $row[sleeve] . '</td>
-              <td> <input type="button" id="add_to_cart" onclick="ajax()" value="Add to Cart"> </td>
+              <td> <input type="radio" name="add_to_cart" value="'. $row[shirtID] . '"> </td>
             </tr>';
 
         }
+
         echo '</table>';
 
+        echo '<td> <input type="submit" id="submit" value="Add to Cart"> </td>';
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+          if (isset($_POST["add_to_cart"]) && (!empty($_POST["add_to_cart"]))) {
+              $item_to_add = $_POST["add_to_cart"];
+          }
+
+        }
+
     ?>
-    <script>
-    function ajax() {
-      var shirt = document.getElementById("000121").value;
-      $.ajax({
-        url: "Shopping_Cart.php",
-        type: "POST",
-        data: { shirt: shirt },
-        success: function(data) {
-            $('#output').html(data);
-        },
-      });
-    }
-    </script>
+
+    </form>
 
 </body>
 

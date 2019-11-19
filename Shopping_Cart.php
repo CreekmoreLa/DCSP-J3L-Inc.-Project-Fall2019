@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>J3L's Shirt Shop Shopping Cart View</title>
+    <title>Shopping Cart</title>
 
     <style>
         td, th {
@@ -21,9 +21,11 @@
 
 <body>
 
+  <br> <h1>J3L's Shirt Shop Shopping Cart View</h1> <br>
+
   <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
-  <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
-  
+  <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page"> <br>
+
 <?php
 
 class shopping_cart {
@@ -32,6 +34,7 @@ public $shopping_cart;
 
 public function shopping_cart($shirtID) {
   $shopping_cart = array($shirtID);
+  return $shopping_cart;
 }
 
 public function add_item($shirtID)
@@ -49,7 +52,7 @@ public function remove_item($shirtID)
 
 public function view_item($shirtID)
 {
-  return $shirtID;
+  return $shopping_cart[shirtID];
 }
 
 public function purchase($shirtID)
@@ -62,12 +65,10 @@ public function purchase($shirtID)
 
 }
 
+    $item_to_add = $_POST["add_to_cart"];
 
-
-
-
-  $shirtID = $_POST['shirt'];
-  $current_cart = new shopping_cart($shirtID);
+    $cart = [$item_to_add];
+    array_push($cart, $item_to_add);
 
     echo '
     <table>
@@ -80,12 +81,16 @@ public function purchase($shirtID)
         <th colspan="1">Sleeve Length</th>
       </tr>';
 
+      $arrayLength = count($cart);
+      $i = 0;
+      while ($i < $arrayLength) {
+        echo '
+          <tr>
+            <td>'. $cart[$i] . '</td>
 
-      echo '
-        <tr>
-          <td>'. $current_cart->view_item($shirtID) . '</td>
-
-        </tr>';
+          </tr>';
+        $i++;
+      }
 
 
     echo '</table>';
