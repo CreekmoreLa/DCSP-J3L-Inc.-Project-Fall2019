@@ -54,12 +54,12 @@
           echo 'Credit Card info: ' . $row[cc_num] .'<br>';
         }
 
-        else {
-          echo 'It looks like you are not currently logged in! Please Log in to view your account information.';
-          ?>
-          <br><input type="button" id="log_out" onclick="document.location.href='logout_page.php'" value="Log Out"><br> 
-          <?php
-        }
+
+          //echo 'It looks like you are not currently logged in! Please Log in to view your account information.';
+
+          //<br><input type="button" id="log_out" onclick="document.location.href='logout_page.php'" value="Log Out"><br>
+
+
 
       }
 

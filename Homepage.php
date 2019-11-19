@@ -16,23 +16,29 @@
         tbody {
         width:25%
         }
+
     </style>
 
 </head>
 
 <body>
 
-    <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
     <form action = "filter.php" method = "post">
-      <input type="text" id="valueToSearch" placeholder="Search an Item: "><br><br>
-      <input type="submit" id="search" value = "Submit"><br><br>
-    </form>
+
     <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
+
+    <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
+
+    <input type="text" id="valueToSearch" placeholder="Search an Item: ">
+
+    <input type="submit" id="search" value = "Submit">
+
+    </form>
 
 
     <br> <h1> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
 
-    <br> <h2> These are the shirts that we currently have in stock: </h2> <br>
+    <h2> These are the shirts that we currently have in stock: </h2> <br>
 
     <form method="post" action="Shopping_Cart.php">
 
@@ -77,7 +83,7 @@
 
         echo '</table>';
 
-        echo '<td> <input type="submit" id="submit" value="Add to Cart"> </td>';
+        echo '<br> <input type="submit" id="submit" value="Add to Cart"> <br>';
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -91,7 +97,7 @@
 
     </form>
 
-    <input type="button" id="log_out" onclick="document.location.href='logout_page.php'" value="Log Out">
+    <br><br><br> <input type="button" id="log_out" onclick="document.location.href='logout_page.php'" value="Log Out">
 
 </body>
 
