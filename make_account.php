@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include('adduser.php') ?>
+<?php require_once('adduser.php'); ?>
 <html>
 <head>
 <title></title>

@@ -11,7 +11,8 @@ $reward_points = "0";
 $empty = "0";
 $exists = "0";
 
-$connection = new mysqli($hn, $un, $pw, $db);
+//$connection = new mysqli($hn, $un, $pw, $db);
+//if ($connection->connect_error) die($connection->connect_error);
 
 if (isset($_POST['crte_acc'])){
 
