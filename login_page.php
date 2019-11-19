@@ -40,14 +40,14 @@
 
             if (($password == $row['password']) && ($password != 'makemeadmin')) {
                 $cookie_name = 'User';
-                setcookie($cookie_name, $user_name);
+                setcookie($cookie_name, $email);
                 $_SESSION['Logged in as User'] = true;
                 header("Location: Homepage.php");
             }
 
             else if (($password == $row['password']) && ($password == 'makemeadmin')) {
                 $cookie_name = 'Admin';
-                setcookie($cookie_name, $user_name);
+                setcookie($cookie_name, $email);
                 $_SESSION['Logged in as Admin'] = true;
                 header("Location: Homepage.php");
             }
