@@ -40,18 +40,25 @@
 
         if ($_SESSION['Logged in as User'] = true)
         {
-          echo 'Welcome to your Account Page User, ' . $row[user_name] . '!\n';
-          echo 'Rewards Points: ' . $row[reward_points] .'\n';
-          echo 'Mailing Address: ' . $row[mail_address] .'\n';
-          echo 'Credit Card info: ' . $row[cc_num] .'\n';
+          echo 'Welcome to your Account Page, user ' . $row[user_name] . '!<br>';
+          echo 'Rewards Points: ' . $row[reward_points] .'<br>';
+          echo 'Mailing Address: ' . $row[mail_address] .'<br>';
+          echo 'Credit Card info: ' . $row[cc_num] .'<br>';
         }
 
         else if ($_SESSION['Logged in as Admin'] = true)
         {
-          echo 'Welcome to your Account Page User, ' . $row[user_name] . '!\n';
-          echo 'Rewards Points: ' . $row[reward_points] .'\n';
-          echo 'Mailing Address: ' . $row[mail_address] .'\n';
-          echo 'Credit Card info: ' . $row[cc_num] .'\n';
+          echo 'Welcome to your Account Page, admin ' . $row[user_name] . '!<br>';
+          echo 'Rewards Points: ' . $row[reward_points] .'<br>';
+          echo 'Mailing Address: ' . $row[mail_address] .'<br>';
+          echo 'Credit Card info: ' . $row[cc_num] .'<br>';
+        }
+
+        else {
+          echo 'It looks like you are not currently logged in! Please Log in to view your account information.';
+          ?>
+          <br><input type="button" id="log_out" onclick="document.location.href='logout_page.php'" value="Log Out"><br> 
+          <?php
         }
 
       }
