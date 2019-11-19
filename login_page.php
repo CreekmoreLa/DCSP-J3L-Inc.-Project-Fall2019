@@ -17,11 +17,11 @@
         session_start();
 
         if (isset($_SESSION['Logged in as User']) && !(empty($_SESSION['Logged in as User']))) {
-          header("Location: Homepage.php");
+          //header("Location: Homepage.php");
         }
 
         else if (isset($_SESSION['Logged in as Admin']) && !(empty($_SESSION['Logged in as Admin']))) {
-          header("Location: Homepage.php");
+          //header("Location: Homepage.php");
         }
 
         $connection = new mysqli($hn, $un, $pw, $db);
@@ -31,7 +31,7 @@
         $user_name = stripslashes($_POST['email']);
         $password = stripslashes($_POST['password']);
 
-        $query = "SELECT * FROM Users WHERE user_name = '$user_name'";
+        $query = "SELECT * FROM USERS WHERE user_name = '$user_name'";
         $result = $connection->query($query);
         $row = $result->fetch_array();
 
@@ -67,7 +67,7 @@
 
         <form method="post" action="login_page.php">
             <label>Email: </label>
-            <input type="email" name="email"> <br>
+            <input type="text" name="email"> <br>
             <label>Password: </label>
             <input type="password" name="password"> <br>
             <input type="submit" value="Log in">
