@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE HTML>
 <html lang = "en">
 
@@ -17,19 +18,14 @@
   <br> <h1> Welcome to the Account Page of J3L's Shirt Shop! </h1> <br>
 
   <?php
-      session_start();
+
 
       require_once('login.php');
 
       $conn = new mysqli($hn, $un, $pw, $db);
       if ($conn->connect_error)
           die($conn->connect_error);
-      /*
-      // TODO: pull from cookie or session...
-      $cookie_name = "user";
-      $cookie_value = user_name;
-      setcookie($cookie_name, $cookie_value, time() + (86400 *30), "/");
-      */
+
       $email = $_POST['email'];
       $query = "SELECT email, user_name, cc_num, mail_address, reward_points FROM USERS WHERE email = '$email'";
       $result = $conn->query($query);

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,6 +97,8 @@
     ?>
 
     </form>
+
+    <input type="button" id="log_out" onclick="document.location.href='logout_page.php'" value="Log Out">
 
 </body>
 

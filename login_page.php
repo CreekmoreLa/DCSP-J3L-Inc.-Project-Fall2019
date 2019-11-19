@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,8 +15,6 @@
 
         require_once('login.php');
 
-        session_start();
-
         if (isset($_SESSION['Logged in as User']) && !(empty($_SESSION['Logged in as User']))) {
           header("Location: Homepage.php");
         }
@@ -29,6 +28,7 @@
         if ($connection->connect_error) die($connection->connect_error);
 
         $email = stripslashes($_POST['email']);
+        $GLOBALS['user_email'] = $email;
         $password = stripslashes($_POST['password']);
 
         $query = "SELECT * FROM USERS WHERE email = '$email'";
