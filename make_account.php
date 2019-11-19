@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require_once('adduser.php'); ?>
 <html>
 <head>
 <title></title>

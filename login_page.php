@@ -28,10 +28,14 @@
 
         if ($connection->connect_error) die($connection->connect_error);
 
-        $user_name = stripslashes($_POST['email']);
+        $email = stripslashes($_POST['email']);
         $password = stripslashes($_POST['password']);
 
+<<<<<<< HEAD
         $query = "SELECT * FROM USERS WHERE user_name = '$user_name'";
+=======
+        $query = "SELECT * FROM Users WHERE email = '$email'";
+>>>>>>> 7b73406affd8821be5efa6e4317c254b115fa510
         $result = $connection->query($query);
         $row = $result->fetch_array();
 
@@ -77,4 +81,5 @@
             Placeholder for "forgot password" link<br><br>
             Placeholder for "create account" link
         </p>
+      </body>
 </html>
