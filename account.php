@@ -26,11 +26,13 @@
       if ($conn->connect_error)
           die($conn->connect_error);
 
-      if(isset($_COOKIE["User"]) || isset($_COOKIE["Admin"])){ 
-        echo "Auction Item is a  " . $_COOKIE["Auction_Item"];
+      if(isset($_COOKIE["User"])) {
+        $email = $_COOKIE['User'];
+      }
+      else if(isset($_COOKIE["Admin"])) {
+        $email = $_COOKIE['Admin'];
       }
 
-      $email = $_POST['email'];
       $query = "SELECT email, user_name, cc_num, mail_address, reward_points FROM USERS WHERE email = '$email'";
       $result = $conn->query($query);
 
@@ -38,18 +40,18 @@
 
         if ($_SESSION['Logged in as User'] = true)
         {
-            echo 'Welcome to your Account Page User, ' . $row[user_name] . "!";
-            echo 'Rewards Points: ' . $row[reward_points];
-            echo 'Mailing Address: ' . $row[mail_address];
-            echo 'Credit Card info: ' . $row[cc_num];
+          echo 'Welcome to your Account Page User, ' . $row[user_name] . '!\n';
+          echo 'Rewards Points: ' . $row[reward_points] .'\n';
+          echo 'Mailing Address: ' . $row[mail_address] .'\n';
+          echo 'Credit Card info: ' . $row[cc_num] .'\n';
         }
 
         else if ($_SESSION['Logged in as Admin'] = true)
         {
-            echo 'Welcome to your Account Page Admin, ' . $row[user_name] . "!";
-            echo 'Rewards Points: ' . $row[reward_points];
-            echo 'Mailing Address: ' . $row[mail_address];
-            echo 'Credit Card info: ' . $row[cc_num];
+          echo 'Welcome to your Account Page User, ' . $row[user_name] . '!\n';
+          echo 'Rewards Points: ' . $row[reward_points] .'\n';
+          echo 'Mailing Address: ' . $row[mail_address] .'\n';
+          echo 'Credit Card info: ' . $row[cc_num] .'\n';
         }
 
       }
