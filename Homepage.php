@@ -22,17 +22,10 @@
 <body>
 
     <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
-
-    <div class="topnav">
-
-      <div class="search-container">
-        <form action="filter.php">
-          <input type="text" placeholder="Search.." name="search">
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </div>
-
+    <form action = "filter.php" method = "post">
+      <input type="text" id="valueToSearch" placeholder="Item to Search"><br><br>;
+      <input type="submit" id="search" value = "Submit"><br><br>
+    </form>
     <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
 
 

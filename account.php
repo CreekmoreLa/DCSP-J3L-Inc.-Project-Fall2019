@@ -1,3 +1,18 @@
+<?php
+require_once('login.php');
+function filterTable($query)
+{
+  $connect = mysqli_connect("localhost", $email, $password, "USERS");
+  if ($conn->connect_error)
+      die($conn->connect_error);
+}
+
+ ?>
+
+
+
+
+
 <!DOCTYPE HTML>
 <html lang = "en">
 
@@ -20,10 +35,13 @@
       session_start();
 
       require_once('login.php');
+      $connect = mysqli_connect("localhost", $email, $password, "USERS");
+      if ($conn->connect_error){
+        die($conn->connect_error);
+      }
 
-      $conn = new mysqli($hn, $un, $pw, $db);
-      if ($conn->connect_error)
-          die($conn->connect_error);
+
+
 
       // TODO: pull from cookie or session...
       $cookie_name = "user";
@@ -47,7 +65,7 @@
         else if ($_SESSION['Logged in as Admin'] = true)
         {
             echo 'Welcome to your Account Page Admin, ' . $row[user_name] . "!";
-            echo 'email: ' . $row[email];
+            echo 'Email: ' . $row[email];
             echo 'Mailing Address: ' . $row[mail_address];
             echo 'Credit Card info: ' . $row[cc_num];
         }
