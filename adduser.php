@@ -5,7 +5,7 @@ session_start;
 $email = "";
 $user_name = "";
 $password = "";
-$cc_num = array();
+$cc_num = "";
 $mail_address = "";
 $reward_points = "0";
 $empty = "0";
@@ -31,15 +31,15 @@ if (isset($_POST['crte_acc'])){
   if ($password == ""){
     $empty = "1";
   }
-  if (count($cc_num) == 0){
+  if ($cc_num == ""){
     $empty = "1";
   }
   if ($mail_address == ""){
     $empty = "1";
   }
 
-  $user_check_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
-  $result = mysqli_query($db, $user_check_query);
+  $query = "SELECT * FROM users WHERE email='$email'";
+  $result = mysqli_query($db, $query);
   $user = mysqli_fetch_assoc($result);
 
   if ($user['email'] === $email) {

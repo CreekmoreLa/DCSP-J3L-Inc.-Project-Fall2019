@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include('adduser.php') ?>
 <html>
 <head>
 <title></title>
