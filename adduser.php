@@ -1,6 +1,7 @@
 <?php
 
-session_start;
+require_once('login.php');
+session_start();
 
 $email = "";
 $user_name = "";
@@ -11,8 +12,8 @@ $reward_points = "0";
 $empty = "0";
 $exists = "0";
 
-//$connection = new mysqli($hn, $un, $pw, $db);
-//if ($connection->connect_error) die($connection->connect_error);
+$connection = new mysqli($hn, $un, $pw, $db);
+if ($connection->connect_error) die($connection->connect_error);
 
 if (isset($_POST['crte_acc'])){
 
