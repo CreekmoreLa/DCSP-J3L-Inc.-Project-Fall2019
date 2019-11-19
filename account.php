@@ -24,14 +24,13 @@
       $conn = new mysqli($hn, $un, $pw, $db);
       if ($conn->connect_error)
           die($conn->connect_error);
-      /*
+
       // TODO: pull from cookie or session...
       $cookie_name = "user";
-      $cookie_value = user_name;
+      $cookie_value = email;
       setcookie($cookie_name, $cookie_value, time() + (86400 *30), "/");
-      */
-      $email = $_POST['email'];
-      $query = "SELECT email, user_name, cc_num, mail_address, reward_points FROM USERS WHERE email = '$email'";
+
+      $query = "SELECT email, user_name, cc_num, mail_address FROM USERS WHERE email = '$email'";
       $result = $conn->query($query);
 
       while($row = $result->fetch_array()) {
@@ -39,7 +38,8 @@
         if ($_SESSION['Logged in as User'] = true)
         {
             echo 'Welcome to your Account Page User, ' . $row[user_name] . "!";
-            echo 'Rewards Points: ' . $row[reward_points];
+            echo 'Reward Points: ' . $row[reward_points];
+            echo 'Email: ' . $row[email];
             echo 'Mailing Address: ' . $row[mail_address];
             echo 'Credit Card info: ' . $row[cc_num];
         }
@@ -47,9 +47,13 @@
         else if ($_SESSION['Logged in as Admin'] = true)
         {
             echo 'Welcome to your Account Page Admin, ' . $row[user_name] . "!";
-            echo 'Rewards Points: ' . $row[reward_points];
+            echo 'email: ' . $row[email];
             echo 'Mailing Address: ' . $row[mail_address];
             echo 'Credit Card info: ' . $row[cc_num];
+        }
+        else
+        {
+          echo "You need to log in!";
         }
 
       }
