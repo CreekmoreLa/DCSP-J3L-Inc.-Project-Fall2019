@@ -38,11 +38,13 @@ if (isset($_POST['crte_acc'])){
     $empty = "1";
   }
 
-  $query = "SELECT * FROM users WHERE email='$email'";
-  $result = mysqli_query($db, $query);
-  $user = mysqli_fetch_assoc($result);
+  if ($empty == "0"){
+    $query = "SELECT * FROM users WHERE email='$email'";
+    $result = mysqli_query($db, $query);
+    $member = mysqli_fetch_assoc($result);
+  }
 
-  if ($user['email'] === $email) {
+  if ($member['email'] === $email) {
     $exists = "1";
   }
 
