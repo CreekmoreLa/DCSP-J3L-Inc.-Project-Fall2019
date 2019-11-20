@@ -21,13 +21,13 @@
 
 <body>
 
-  <div id="shopcarttitle">
-    <br> <h1>J3L's Shirt Shop Shopping Cart View</h1> <br>
-  </div>
-
   <div id="shcrtbtns">
     <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
     <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page"> <br>
+  </div>
+
+  <div id="shopcarttitle">
+    <br> <h1>J3L's Shirt Shop Shopping Cart View</h1> <br>
   </div>
 
 <?php
@@ -72,7 +72,6 @@ public function purchase($shirtID)
     $item_to_add = $_POST["add_to_cart"];
 
     $cart = [$item_to_add];
-    //array_push($cart, $item_to_add);
 
     echo '
     <table>
@@ -85,17 +84,32 @@ public function purchase($shirtID)
         <th colspan="1">Sleeve Length</th>
       </tr>';
 
+      require_once('login.php');
+
+      $conn = new mysqli($hn, $un, $pw, $db);
+      if ($conn->connect_error)
+          die($conn->connect_error);
+
       $arrayLength = count($cart);
       $i = 0;
+
       while ($i < $arrayLength) {
+
+        $query = "SELECT * FROM `INVENTORY` WHERE shirtID = '$cart[$i]'";
+        $result = $conn->query($query);
+        $row = $result->fetch_array();
+
         echo '
           <tr>
             <td>'. $cart[$i] . '</td>
-
+            <td>'. $row['price'] . '</td>
+            <td>'. $row['quantity'] . '</td>
+            <td>'. $row['size'] . '</td>
+            <td>'. $row['color'] . '</td>
+            <td>'. $row['sleeve'] . '</td>
           </tr>';
         $i++;
       }
-
 
     echo '</table>';
 
