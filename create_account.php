@@ -60,10 +60,10 @@
     ?>
 
     <form method = "post" action = "create_account.php">
-      <div>
+
         <label>Email</label> <input type = "email" name = "email">
 
-        <label>Username</label> <input type = "text" name = "user_name">
+        <div> <label>Username</label> <input type = "text" name = "user_name"></div>
 
         <label>Password</label> <input type = "password" name = "password">
 
@@ -72,7 +72,7 @@
         <label>Address</label> <input type = "text" name = "mail_address">
 
         <input type = "submit" value = "Create Account" name = "create_account">
-      </div>
+
         <p>After you create an account, you can <a href="login_page.php">Log in</a></p>
 
       </form>
