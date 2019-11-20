@@ -32,7 +32,7 @@
 
       <input type="text" id="valueToSearch" placeholder="Search an Item: ">
 
-      <input type="submit" id="search" value = "Submit">
+      <input type="submit" value = "Submit">
 
     </form>
   </div>
