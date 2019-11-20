@@ -23,6 +23,7 @@
 
 <body>
 
+  <div id="pgbtnhome">
     <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
 
     <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
@@ -34,9 +35,11 @@
       <input type="submit" id="search" value = "Submit">
 
     </form>
+  </div>
 
-
-    <br> <h1> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
+    <div id="homehead">
+      <br> <h1> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
+    </div>
 
     <h2> These are the shirts that we currently have in stock: </h2> <br>
 

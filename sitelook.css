@@ -1,10 +1,10 @@
 *{
-  padding: 100px;
-  margin: 100px;
+  padding: 10px;
+  margin: 10px;
 }
 body {
   font-size: 120%;
-  background: #F8F8FF;
+  background-color: #D1D0CE;
   text-align: center;
 }
 
@@ -12,7 +12,7 @@ body {
   width: 30%;
   margin: 50px auto 0px;
   color: white;
-  background: #5F9EA0;
+  background-color: #5F9EA0;
   text-align: center;
   border: 1px solid #B0C4DE;
   border-bottom: none;
@@ -27,27 +27,39 @@ form, .content {
   background: white;
   border-radius: 0px 0px 10px 10px;
 }
-.input-group {
-  margin: 10px 0px 10px 0px;
-}
-.input-group label {
-  display: block;
-  text-align: left;
-  margin: 3px;
-}
-.input-group input {
-  height: 30px;
-  width: 93%;
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid gray;
-}
-.btn {
+.pgbtnhome{
   padding: 10px;
   font-size: 15px;
-  color: white;
-  background: #5F9EA0;
+  color: black;
+  background-color: : #B6B6B4;
+  border: none;
+  border-radius: 5px;
+}
+.homehead{
+  text-align: center;
+}
+.logoutpg{
+  text-align: center;
+}
+.shopcarttitle{
+
+}
+.shcrtbtns{
+  padding: 10px;
+  font-size: 15px;
+  color: black;
+  background-color: : #B6B6B4;
+  border: none;
+  border-radius: 5px;
+}
+.logincreds{
+  text-align: center;
+}
+.movpgbtn{
+  padding: 10px;
+  font-size: 15px;
+  color: black;
+  background-color: : #B6B6B4;
   border: none;
   border-radius: 5px;
 }

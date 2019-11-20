@@ -21,10 +21,14 @@
 
 <body>
 
-  <br> <h1>J3L's Shirt Shop Shopping Cart View</h1> <br>
+  <div id="shopcarttitle">
+    <br> <h1>J3L's Shirt Shop Shopping Cart View</h1> <br>
+  </div>
 
-  <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
-  <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page"> <br>
+  <div id="shcrtbtns">
+    <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
+    <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page"> <br>
+  </div>
 
 <?php
 

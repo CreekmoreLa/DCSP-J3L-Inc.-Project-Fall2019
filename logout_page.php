@@ -17,6 +17,7 @@
 
     ?>
     <body>
+      <div id="logoutpg">
         <h1>Logged Out</h1>
         <p>
             You are now logged out of the website.
@@ -24,5 +25,6 @@
         <p>
             <a href="login_page.php">Log in</a> again.
         </p>
+      </div>
     </body>
 </html>

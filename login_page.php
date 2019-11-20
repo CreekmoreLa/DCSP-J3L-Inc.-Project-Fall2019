@@ -65,16 +65,20 @@
         </p>
 
         <form method="post" action="login_page.php">
+          <div id="logincreds">
             <label>Email: </label>
             <input type="text" name="email"> <br>
             <label>Password: </label>
             <input type="password" name="password"> <br>
             <input type="submit" value="Log in">
+          </div>
         </form>
 
-        <p style="font-style:italic">
-            Placeholder for "forgot password" link<br><br>
-            Placeholder for "create account" link
-        </p>
+        <div id="movpgbtn">
+          <p style="font-style:italic">
+              Placeholder for "forgot password" link<br><br>
+              Placeholder for "create account" link
+          </p>
+        </div>
       </body>
 </html>
