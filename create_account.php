@@ -71,7 +71,7 @@
 
         <label>Address</label> <input type = "text" name = "mail_address">
 
-        <input type = "submit" value = "Create Account" name = "create_account">
+        <div><input type = "submit" value = "Create Account" name = "create_account"></div>
 
         <p>After you create an account, you can <a href="login_page.php">Log in</a></p>
 
