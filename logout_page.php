@@ -16,7 +16,7 @@
         session_destroy();
 
     ?>
-    <body>
+    <body style="background-color:#C24641; color:white;">
       <div id="logoutpg">
         <h1>Logged Out</h1>
         <p>

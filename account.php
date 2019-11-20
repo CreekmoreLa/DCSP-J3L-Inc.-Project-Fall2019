@@ -8,7 +8,7 @@
 
 </head>
 
-<body>
+<body style="background-color:#C24641; color:white;">
 
   <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
 

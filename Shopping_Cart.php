@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body style="background-color:#C24641; color:white;">
 
   <div id="shcrtbtns">
     <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
@@ -27,7 +27,7 @@
   </div>
 
   <div id="shopcarttitle">
-    <br> <h1>J3L's Shirt Shop Shopping Cart View</h1> <br>
+    <br> <h1 style="background-color:#C24641; color:white;">J3L's Shirt Shop Shopping Cart View</h1> <br>
   </div>
 
   <form method="post" action="Shopping_Cart.php">

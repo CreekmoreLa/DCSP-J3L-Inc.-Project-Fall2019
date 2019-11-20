@@ -12,9 +12,9 @@
 
 </head>
 
-<body>
+<body style="background-color:#C24641; color:white;">
 
-    <br> <h1> Create an account here: </h1> <br>
+    <br> <h1 style="background-color:#C24641; color:white;"> Create an account here: </h1> <br>
 
     <?php
 
