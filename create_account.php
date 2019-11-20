@@ -44,8 +44,8 @@
         $mail_address = $_POST['mail_address'];
         $reward_points = "0";
 
-        $query = "INSERT INTO USERS (email, user_name, password, cc_num, mail_address, reward_points) VALUES
-                 ('$email', '$user_name', '$password', '$cc_num', '$mail_address', '$reward_points')";
+        $query = "INSERT INTO USERS (email, user_name, password, hash, cc_num, mail_address, reward_points)" . "VALUES
+                 ('$email', '$user_name', '$password', '$hash', '$cc_num', '$mail_address', '$reward_points')";
 
         $result = $connection->query($query);
 

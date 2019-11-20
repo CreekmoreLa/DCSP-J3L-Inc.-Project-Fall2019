@@ -21,7 +21,7 @@
 
 </head>
 
-<body>
+<body style ="background-color:powderblue;">
 
   <div id="pgbtnhome">
     <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
@@ -69,7 +69,7 @@
           </tr>';
 
         $cart = [];
-        
+
         while($row = $result->fetch_array()) {
 
           echo '
