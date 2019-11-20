@@ -17,7 +17,8 @@
 
         tbody {
         background-color: white;
-        width:25%
+        width:25%;
+        text-align: center;
         }
         header{
           text-align: center;
@@ -28,7 +29,7 @@
 
 </head>
 
-<body style ="background-color:#C24641;">
+<body style ="background-color:#C24641; text-align: center;">
   <div id="homecontain">
 
     <div id="pgbtnhome">
@@ -37,24 +38,21 @@
 
       <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
 
-    <form action = "filter.php" method = "post">
 
       <input type="text" id="valueToSearch" placeholder="Search an Item: ">
 
       <input type="submit" value = "Submit">
 
-    </form>
   </div>
 
     <div id="homehead">
 
-      <br> <h1 style="background-color:#C24641; color:white;"> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
+      <br> <h1 style="background-color:#C24641; color:white; text-align:center;"> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
 
-      <br> <h1 style="background-color:#C24641; color:white"> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
 
     </div>
 
-    <h2 style="background-color:#C24641; color:white;"> These are the shirts that we currently have in stock: </h2> <br>
+    <h2 style="background-color:#C24641; color:white; text-align: center;"> These are the shirts that we currently have in stock: </h2> <br>
 
     <form method="post" action="Shopping_Cart.php">
 
@@ -70,7 +68,7 @@
       $result = $conn->query($query);
 
         echo '
-        <table>
+        <table style="margin-left:auto;margin-right:auto;">
           <tr>
             <th colspan="1">ShirtID</th>
             <th colspan="1">Price</th>
