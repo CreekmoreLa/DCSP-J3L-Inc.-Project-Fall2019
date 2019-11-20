@@ -115,6 +115,12 @@ public function purchase($shirtID)
 
 ?>
 
+  <input type="submit" id="purchase" value="Purchase"> <br>
+
+  <form method="post" action="Shopping_Cart.php">
+
+  </form>
+
 </body>
 
 </html>
