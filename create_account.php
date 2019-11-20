@@ -4,6 +4,11 @@
 <head>
 
     <title> Create Account </title>
+    <style>
+    div {
+      display: block;
+    }
+    </style>
 
 </head>
 
@@ -55,7 +60,7 @@
     ?>
 
     <form method = "post" action = "create_account.php">
-        <div>
+      <div>
         <label>Email</label> <input type = "email" name = "email">
 
         <label>Username</label> <input type = "text" name = "user_name">
