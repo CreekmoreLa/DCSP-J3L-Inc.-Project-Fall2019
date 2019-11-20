@@ -10,7 +10,7 @@
             }
         </style>
     </head>
-    <body style="background-color:#C24641; color:white;">
+    <body style="background-color:#C24641; color:white; text-align:center;">
         <?php
 
         require_once('login.php');
@@ -59,7 +59,7 @@
 
         ?>
 
-        <h1 style="background-color:#C24641; color:white;">Welcome to <span style="font-style:italic; font-weight:bold; color: maroon">
+        <h1 style="background-color:#C24641; color:white; text-align:center;">Welcome to <span style="font-style:italic; font-weight:bold; color: maroon">
                 J3L Inc.</span>!</h1>
 
         <p style="color: red">
