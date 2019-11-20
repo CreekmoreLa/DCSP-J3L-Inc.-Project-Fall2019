@@ -5,23 +5,31 @@
 <head>
 
     <title>J3L's Shirt Shop Home Page</title>
+    <link rel=”stylesheet” type=”text/css” href=”sitelook.css”/>
 
     <style>
         td, th {
+        background-color: white;
         border: 1px solid;
         text-align: center;
         padding: 0.5em;
         }
 
         tbody {
+        background-color: white;
         width:25%
+        }
+        header{
+          text-align: center;
+          background-color: : #B6B6B4;
         }
 
     </style>
 
 </head>
 
-<body style ="background-color:powderblue;">
+<body style ="background-color:#C24641;">
+  <div id="homecontain">
 
   <div id="pgbtnhome">
     <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
@@ -38,10 +46,10 @@
   </div>
 
     <div id="homehead">
-      <br> <h1> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
+      <br> <h1 style="background-color:#C24641; color:white"> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
     </div>
 
-    <h2> These are the shirts that we currently have in stock: </h2> <br>
+    <h2 style="background-color:#C24641; color:white"> These are the shirts that we currently have in stock: </h2> <br>
 
     <form method="post" action="Shopping_Cart.php">
 
@@ -102,6 +110,8 @@
     </form>
 
     <br><br><br> <input type="button" id="log_out" onclick="document.location.href='logout_page.php'" value="Log Out">
+    <input type="button" id="log_in" onclick="document.location.href='login_page.php'" value="Log In">
+  </div>
 
 </body>
 
