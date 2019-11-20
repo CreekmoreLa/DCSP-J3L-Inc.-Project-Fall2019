@@ -75,11 +75,7 @@
           </div>
         </form>
         <?php
-        if(logincreds != email || logincreds != password)
-        {
-          trigger_error("Email or Password is incorrect. Try again.");
-        }
-        ?>
+
         <div id="movpgbtn">
           <p style="font-style:italic">
             Click <a href="create_account.php">here</a> to create an account.

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 20, 2019 at 06:01 PM
+-- Generation Time: Nov 20, 2019 at 06:15 PM
 -- Server version: 10.3.18-MariaDB
 -- PHP Version: 5.4.16
 
@@ -17,8 +17,34 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `jr2329`
+-- Database: `jhp232`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `classics`
+--
+
+CREATE TABLE IF NOT EXISTS `classics` (
+  `author` varchar(128) DEFAULT NULL,
+  `title` varchar(128) DEFAULT NULL,
+  `category` varchar(16) DEFAULT NULL,
+  `year` int(11) DEFAULT NULL,
+  `isbn` char(13) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `classics`
+--
+
+INSERT INTO `classics` (`author`, `title`, `category`, `year`, `isbn`) VALUES
+('Charles Dickens', 'The Old Curiosity Shop', 'Fiction', 1841, '9780099533474'),
+('Charles Dickens', 'Little Dorrit', 'Fiction', 1857, '9780141439969'),
+('William Shakespeare', 'Romeo and Juliet', 'Play', 1594, '9780192814968'),
+('Charles Darwin', 'The Origin of Species', 'Non-Fiction', 1856, '9780517123201'),
+('Jane Austen', 'Pride and Prejudice', 'Fiction', 1811, '9780582506206'),
+('Mark Twain', 'The Adventures of Tom Sawyer', 'Fiction', 1876, '9781598184891');
 
 -- --------------------------------------------------------
 
@@ -51,15 +77,84 @@ INSERT INTO `INVENTORY` (`shirtID`, `price`, `quantity`, `size`, `color`, `sleev
 ('000567', 6.79, 4, 'Small', 'White', 1),
 ('042069', 16, 5, 'Medium', 'Yellow', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lab4_users`
+--
+
+CREATE TABLE IF NOT EXISTS `lab4_users` (
+  `forename` varchar(32) NOT NULL,
+  `surname` varchar(32) NOT NULL,
+  `type` varchar(10) NOT NULL,
+  `username` varchar(32) NOT NULL,
+  `password` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lab4_users`
+--
+
+INSERT INTO `lab4_users` (`forename`, `surname`, `type`, `username`, `password`) VALUES
+('Super', 'User', 'admin', 'admin', '6e8204c0862ec8abecb49762f0899554'),
+('Bill', 'Smith', 'user', 'bsmith', '32aa0c466818e1ccba25b8793db98c94'),
+('Pauline', 'Jones', 'user', 'pjones', '53eb1f29c1f8a132441a4fad1d6f667d');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `USERS`
+--
+
+CREATE TABLE IF NOT EXISTS `USERS` (
+  `email` varchar(75) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `password` varchar(25) NOT NULL,
+  `cc_num` varchar(25) NOT NULL,
+  `mail_address` varchar(90) NOT NULL,
+  `reward_points` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `USERS`
+--
+
+INSERT INTO `USERS` (`email`, `user_name`, `password`, `cc_num`, `mail_address`, `reward_points`) VALUES
+('bossman@msstate.edu', 'The Boss', 'makemeadmin', '123456789', '804 Alexis Ave Starkville, MS 39751', 0),
+('jared@msstate.edu', 'Jared Oakes', 'jared', '123456789', '804 Alexis Ave Starkville, MS 39751', 9),
+('jayden@msstate.edu', 'Jayden Rushing', 'jayden', '123456789', '804 Alexis Ave Starkville, MS 39751', 12),
+('joe@msstate.edu', 'Joe Patterson', 'joe', '123456789', '804 Alexis Ave Starkville, MS 39751', 0),
+('laura@msstate.edu', 'Laura Creekmore', 'laura', '123456789', '804 Alexis Ave Starkville, MS 39751', 9);
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `classics`
+--
+ALTER TABLE `classics`
+  ADD PRIMARY KEY (`isbn`),
+  ADD KEY `author` (`author`(20)),
+  ADD KEY `category` (`category`(4));
 
 --
 -- Indexes for table `INVENTORY`
 --
 ALTER TABLE `INVENTORY`
   ADD PRIMARY KEY (`shirtID`);
+
+--
+-- Indexes for table `lab4_users`
+--
+ALTER TABLE `lab4_users`
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- Indexes for table `USERS`
+--
+ALTER TABLE `USERS`
+  ADD PRIMARY KEY (`email`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

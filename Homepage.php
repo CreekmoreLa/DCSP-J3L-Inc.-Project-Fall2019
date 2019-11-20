@@ -31,10 +31,11 @@
 <body style ="background-color:#C24641;">
   <div id="homecontain">
 
-  <div id="pgbtnhome">
-    <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
+    <div id="pgbtnhome">
 
-    <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
+      <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
+
+      <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
 
     <form action = "filter.php" method = "post">
 
@@ -46,7 +47,13 @@
   </div>
 
     <div id="homehead">
+<<<<<<< HEAD
       <br> <h1 style="background-color:#C24641; color:white"> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
+=======
+
+      <br> <h1> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
+      
+>>>>>>> dfd2eba1bdcbeece5feddb60bcd0279b8f10c8a3
     </div>
 
     <h2 style="background-color:#C24641; color:white"> These are the shirts that we currently have in stock: </h2> <br>
