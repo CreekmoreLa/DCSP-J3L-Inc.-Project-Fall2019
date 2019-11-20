@@ -53,6 +53,7 @@
 
             else {
               $error_login = "You have entered something incorrectly.";
+              echo $error_login;
             }
         }
 
