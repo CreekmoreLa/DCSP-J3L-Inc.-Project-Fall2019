@@ -8,7 +8,7 @@ $user_name = "";
 $password = "";
 $cc_num = "";
 $mail_address = "";
-$reward_points = "0";
+$reward_points = 0;
 $empty = "0";
 $exists = "0";
 
@@ -46,12 +46,12 @@ if (isset($_POST['crte_acc'])){
     $member = mysqli_fetch_assoc($result);
   }
 
-  if ($member['email'] === $email) {
+  if ($member['email'] == $email) {
     $exists = "1";
   }
 
   if ($empty == "0" && $exists == "0"){
-    $query = "INSERT INTO users (email, user_name, password, cc_num, mail_address, reward_points) VALUES
+    $query = "INSERT INTO USERS (email, user_name, password, cc_num, mail_address, reward_points) VALUES
               ('$email', '$user_name', '$password', '$cc_num', '$mail_address', ''$reward_points')";
     mysqli_query($db, $query);
     $_SESSION['email'] = $email;
