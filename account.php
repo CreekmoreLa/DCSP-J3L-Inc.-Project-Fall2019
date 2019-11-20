@@ -40,7 +40,7 @@
 
         echo 'It looks like you are not currently logged in! Please Log in to view your account information.'; ?>
 
-        <br><input type="button" id="log_out" onclick="document.location.href='logout_page.php'" value="Log Out"><br> <?php
+        <br><input type="button" id="log_in" onclick="document.location.href='login_page.php'" value="Log In"><br> <?php
       }
 
       else {
@@ -61,12 +61,8 @@
             echo 'Mailing Address: ' . $row[mail_address] .'<br>';
             echo 'Credit Card info: ' . $row[cc_num] .'<br>';
           }
-
         }
       }
-
-
-
   ?>
 
 </body>
