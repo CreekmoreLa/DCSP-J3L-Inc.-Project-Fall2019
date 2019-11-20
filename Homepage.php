@@ -69,6 +69,7 @@
           </tr>';
 
         $cart = [];
+        
         while($row = $result->fetch_array()) {
 
           echo '
