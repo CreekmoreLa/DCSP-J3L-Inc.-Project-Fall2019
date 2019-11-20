@@ -53,11 +53,12 @@
 
             else {
               $error_login = "You have entered something incorrectly.";
-              echo $error_login;
+              echo "$error_login";
             }
         }
 
         ?>
+        
         <h1>Welcome to <span style="font-style:italic; font-weight:bold; color: maroon">
                 J3L Inc.</span>!</h1>
 
@@ -74,11 +75,11 @@
             <input type="submit" value="Log in">
           </div>
         </form>
-        <?php
 
         <div id="movpgbtn">
           <p style="font-style:italic">
-            Click <a href="create_account.php">here</a> to create an account.
+            <br>Click <a href="create_account.php">here</a> to create an account.
+            <br>Visit Homepage without logging in by clicking <a href="Homepage.php">here</a>.
           </p>
         </div>
       </body>

@@ -36,12 +36,13 @@
       <input type="submit" value = "Submit">
 
     </form>
-  </div>
+    
+    </div>
 
     <div id="homehead">
 
       <br> <h1> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
-      
+
     </div>
 
     <h2> These are the shirts that we currently have in stock: </h2> <br>
@@ -71,7 +72,6 @@
             <th colspan="1">Purchase?</th>
           </tr>';
 
-        $cart = [];
 
         while($row = $result->fetch_array()) {
 

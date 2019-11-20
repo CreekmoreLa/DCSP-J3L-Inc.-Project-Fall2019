@@ -30,40 +30,42 @@
     <br> <h1>J3L's Shirt Shop Shopping Cart View</h1> <br>
   </div>
 
+  <form method="post" action="Shopping_Cart.php">
+
 <?php
 
 class shopping_cart {
 
-public $shopping_cart;
+  public $shopping_cart;
 
-public function shopping_cart($shirtID) {
-  $shopping_cart = array($shirtID);
-  return $shopping_cart;
-}
-
-public function add_item($shirtID)
-{
-  array_push($shopping_cart, $shirtID);
-}
-
-public function remove_item($shirtID)
-{
-  foreach (array_keys($shopping_cart, $shirtID) as $value) {
-    unset($shopping_cart[$key]);
+  public function shopping_cart($shirtID) {
+    $shopping_cart = array($shirtID);
+    return $shopping_cart;
   }
-  $shopping_cart = array_values($shopping_cart);
-}
 
-public function view_item($shirtID)
-{
-  return $shopping_cart[shirtID];
-}
-
-public function purchase($shirtID)
-{
-  foreach ($shopping_cart as $value) {
-    unset($shopping_cart[$value]);
+  public function add_item($shirtID)
+  {
+    array_push($shopping_cart, $shirtID);
   }
+
+  public function remove_item($shirtID)
+  {
+    foreach (array_keys($shopping_cart, $shirtID) as $value) {
+      unset($shopping_cart[$key]);
+    }
+    $shopping_cart = array_values($shopping_cart);
+  }
+
+  public function view_item($shirtID)
+  {
+    return $shopping_cart[shirtID];
+  }
+
+  public function purchase($shirtID)
+  {
+    foreach ($shopping_cart as $value) {
+      unset($shopping_cart[$value]);
+    }
 
 }
 
@@ -107,19 +109,37 @@ public function purchase($shirtID)
             <td>'. $row['size'] . '</td>
             <td>'. $row['color'] . '</td>
             <td>'. $row['sleeve'] . '</td>
+            <td> <input type="radio" name="purchase_item" value="'. $cart[$i] . '"> </td>
           </tr>';
         $i++;
       }
 
     echo '</table>';
 
+    $init_var = true;
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+      if (isset($_POST["purchase_item"]) && (!empty($_POST["purchase_item"]))) {
+
+          $item_to_purchase = $_POST["purchase_item"];
+
+          $init_var = false;
+
+          echo "<br>Success: Purchase Complete!<br>";
+      }
+
+      else if (!$init_var) {
+
+        echo "<br>Error: Could Not Complete Purchase!<br>";
+
+      }
+
+    }
+
 ?>
 
-  <input type="submit" id="purchase" value="Purchase"> <br>
-
-  <form method="post" action="Shopping_Cart.php">
-
-  
+    <br> <input type="submit" id="submit" value="Purchase"> <br>
 
   </form>
 
