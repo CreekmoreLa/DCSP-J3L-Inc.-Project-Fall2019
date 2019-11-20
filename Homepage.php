@@ -76,7 +76,7 @@
             <th colspan="1">Size</th>
             <th colspan="1">Color</th>
             <th colspan="1">Sleeve Length</th>
-            <th colspan="1">Purchase?</th>
+            <th colspan="1">Add to Cart?</th>
           </tr>';
 
         $cart = [];

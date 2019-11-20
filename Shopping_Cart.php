@@ -84,6 +84,7 @@ class shopping_cart {
         <th colspan="1">Size</th>
         <th colspan="1">Color</th>
         <th colspan="1">Sleeve Length</th>
+        <th colspan="1">Purchase?</th>
       </tr>';
 
       require_once('login.php');
