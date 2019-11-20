@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once('login.php');
-$conn = new mysqli($hn, $un, $pw, $db)
+$conn = new mysqli($hn, $un, $pw, $db);
+mysql_select_db("jr2329");
 $output = '';
 
 if(isset($_POST['valueToSearch']))
