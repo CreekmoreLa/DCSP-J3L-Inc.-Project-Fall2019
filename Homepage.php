@@ -23,15 +23,15 @@
 
 <body>
 
-    <form action = "filter.php" method = "post">
-
     <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
 
     <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
 
-    <input type="text" id="valueToSearch" placeholder="Search an Item: ">
+    <form action = "filter.php" method = "post">
 
-    <input type="submit" id="search" value = "Submit">
+      <input type="text" id="valueToSearch" placeholder="Search an Item: ">
+
+      <input type="submit" id="search" value = "Submit">
 
     </form>
 

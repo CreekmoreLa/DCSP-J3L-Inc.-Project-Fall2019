@@ -68,7 +68,7 @@ public function purchase($shirtID)
     $item_to_add = $_POST["add_to_cart"];
 
     $cart = [$item_to_add];
-    array_push($cart, $item_to_add);
+    //array_push($cart, $item_to_add);
 
     echo '
     <table>
