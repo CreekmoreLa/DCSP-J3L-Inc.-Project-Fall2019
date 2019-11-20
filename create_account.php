@@ -4,9 +4,9 @@
 
 </head>
 
-<body style="background-color:#C24641; color:white;">
+<body style="background-color:#C24641; color:white; text-align:center;">
 
-    <br> <h1 style="background-color:#C24641; color:white;"> Create an account here: </h1> <br>
+    <br> <h1 style="background-color:#C24641; color:white; text-align:center;"> Create an account here: </h1> <br>
 
     <?php
 
@@ -65,7 +65,7 @@
         <br>
 
         <br>
-        <label>Credit Card Number</label> <input type = "text" name = "cc_num">
+        <label>Card Number</label> <input type = "text" name = "cc_num">
         <br>
 
         <br>
@@ -79,7 +79,7 @@
         <br>
         <p>After you create an account, you can <a href="login_page.php">Log in</a></p>
         <br>
-        
+
       </form>
 
 </body>
