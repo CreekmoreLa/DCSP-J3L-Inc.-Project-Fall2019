@@ -67,7 +67,7 @@
 
         <label>Password</label> <input type = "password" name = "password">
 
-        <label>Credit Card Number</label> <input type = "text" name = "cc_num">
+        <div> <label>Credit Card Number</label> <input type = "text" name = "cc_num"></div>
 
         <label>Address</label> <input type = "text" name = "mail_address">
 
