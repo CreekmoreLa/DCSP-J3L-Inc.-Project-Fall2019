@@ -76,7 +76,7 @@
 
         <div id="movpgbtn">
           <p style="font-style:italic">
-            Click <a href="create_account.php">here</a> to creat an account.
+            Click <a href="create_account.php">here</a> to create an account.
           </p>
         </div>
       </body>
