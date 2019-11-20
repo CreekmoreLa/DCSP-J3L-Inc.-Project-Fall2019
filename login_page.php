@@ -76,8 +76,7 @@
 
         <div id="movpgbtn">
           <p style="font-style:italic">
-              Placeholder for "forgot password" link<br><br>
-              Placeholder for "create account" link
+            Click <a href="create_account.php">here</a> to creat an account.
           </p>
         </div>
       </body>
