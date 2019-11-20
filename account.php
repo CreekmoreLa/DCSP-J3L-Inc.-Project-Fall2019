@@ -36,32 +36,36 @@
       $query = "SELECT email, user_name, cc_num, mail_address, reward_points FROM USERS WHERE email = '$email'";
       $result = $conn->query($query);
 
-      while($row = $result->fetch_array()) {
+      if (!isset($_COOKIE['User']) && !isset($_COOKIE['Admin'])) {
+        
+        echo 'It looks like you are not currently logged in! Please Log in to view your account information.';
 
-        if ($_SESSION['Logged in as User'] = true)
-        {
-          echo 'Welcome to your Account Page, user ' . $row[user_name] . '!<br>';
-          echo 'Rewards Points: ' . $row[reward_points] .'<br>';
-          echo 'Mailing Address: ' . $row[mail_address] .'<br>';
-          echo 'Credit Card info: ' . $row[cc_num] .'<br>';
-        }
-
-        else if ($_SESSION['Logged in as Admin'] = true)
-        {
-          echo 'Welcome to your Account Page, admin ' . $row[user_name] . '!<br>';
-          echo 'Rewards Points: ' . $row[reward_points] .'<br>';
-          echo 'Mailing Address: ' . $row[mail_address] .'<br>';
-          echo 'Credit Card info: ' . $row[cc_num] .'<br>';
-        }
-
-
-          //echo 'It looks like you are not currently logged in! Please Log in to view your account information.';
-
-          //<br><input type="button" id="log_out" onclick="document.location.href='logout_page.php'" value="Log Out"><br>
-
-
-
+        //<br><input type="button" id="log_out" onclick="document.location.href='logout_page.php'" value="Log Out"><br>
       }
+
+      else {
+        while($row = $result->fetch_array()) {
+
+          if ($_SESSION['Logged in as User'] = true)
+          {
+            echo 'Welcome to your Account Page, user ' . $row[user_name] . '!<br>';
+            echo 'Rewards Points: ' . $row[reward_points] .'<br>';
+            echo 'Mailing Address: ' . $row[mail_address] .'<br>';
+            echo 'Credit Card info: ' . $row[cc_num] .'<br>';
+          }
+
+          else if ($_SESSION['Logged in as Admin'] = true)
+          {
+            echo 'Welcome to your Account Page, admin ' . $row[user_name] . '!<br>';
+            echo 'Rewards Points: ' . $row[reward_points] .'<br>';
+            echo 'Mailing Address: ' . $row[mail_address] .'<br>';
+            echo 'Credit Card info: ' . $row[cc_num] .'<br>';
+          }
+
+        }
+      }
+
+
 
   ?>
 
