@@ -44,20 +44,11 @@
       <input type="submit" value = "Submit">
 
     </form>
-    
+
     </div>
 
     <div id="homehead">
-<<<<<<< HEAD
       <br> <h1 style="background-color:#C24641; color:white"> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
-=======
-
-      <br> <h1> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
-<<<<<<< HEAD
-
-=======
-      
->>>>>>> dfd2eba1bdcbeece5feddb60bcd0279b8f10c8a3
 >>>>>>> 6b68af9ca9346165e6393da363f459b0eb314966
     </div>
 
