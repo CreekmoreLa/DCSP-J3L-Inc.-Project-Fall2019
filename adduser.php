@@ -52,7 +52,7 @@ if (isset($_POST['crte_acc'])){
 
   if ($empty == "0" && $exists == "0"){
     $query = "INSERT INTO users (email, user_name, password, cc_num, mail_address, reward_points) VALUES
-              ($email, $user_name, $password, $cc_num, $mail_address, $reward_points)";
+              ('$email', '$user_name', '$password', '$cc_num', '$mail_address', ''$reward_points')";
     mysqli_query($db, $query);
     $_SESSION['email'] = $email;
     $_SESSION['success'] = "Login Success";
