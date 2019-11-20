@@ -49,7 +49,7 @@
 
     <div id="homehead">
       <br> <h1 style="background-color:#C24641; color:white"> Welcome to the Homepage of J3L's Shirt Shop! </h1> <br>
->>>>>>> 6b68af9ca9346165e6393da363f459b0eb314966
+
     </div>
 
     <h2 style="background-color:#C24641; color:white"> These are the shirts that we currently have in stock: </h2> <br>
