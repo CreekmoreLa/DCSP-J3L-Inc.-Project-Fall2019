@@ -9,13 +9,13 @@ if(isset($_POST['valueToSearch']))
 {
   $searchq = $_POST['valueToSearch'];
   $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
-  $query = myswl_query("SELECT shirtID, price, quantity, size, color, sleeve FROM INVENTORY LIKE '%".$valueToSearch."%'");
-  $count = mysql_num_rows($query);
+  $query = "SELECT shirtID, price, quantity, size, color, sleeve FROM INVENTORY LIKE '%".$valueToSearch."%'";
+  $count = mysqli_num_rows($query);
   if($count == 0){
     $output = 'There was no search results';
   }
   else{
-    while($row = mysql_fetch_array($query)){
+    while($row = mysqli_fetch_array($query)){
       $shirtID = $row['shirtID'];
       $price = $row['price'];
       $quantity = $row['quantity'];
