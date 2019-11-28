@@ -79,8 +79,6 @@
             <th colspan="1">Add to Cart?</th>
           </tr>';
 
-        $cart = [];
-
         while($row = $result->fetch_array()) {
 
           echo '
@@ -104,6 +102,7 @@
 
           if (isset($_POST["add_to_cart"]) && (!empty($_POST["add_to_cart"]))) {
               $item_to_add = $_POST["add_to_cart"];
+
           }
 
         }

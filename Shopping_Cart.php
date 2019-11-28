@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,9 +72,13 @@ class shopping_cart {
 
 }
 
-    $item_to_add = $_POST["add_to_cart"];
-
-    $cart = [$item_to_add];
+  $item_to_add = $_POST["add_to_cart"];
+  if(!isset($_SESSION["Cart"])){
+    $_SESSION["Cart"] = array($item_to_add);
+  }
+  else {
+    array_push($_SESSION["Cart"], $item_to_add);
+  }
 
     echo '
     <table>
@@ -93,8 +98,9 @@ class shopping_cart {
       if ($conn->connect_error)
           die($conn->connect_error);
 
-      $arrayLength = count($cart);
+      $arrayLength = count($_SESSION["Cart"]);
       $i = 0;
+      $cart = $_SESSION["Cart"];
 
       while ($i < $arrayLength) {
 
@@ -104,13 +110,13 @@ class shopping_cart {
 
         echo '
           <tr>
-            <td>'. $cart[$i] . '</td>
+            <td>'. $_SESSION["Cart"][$i] . '</td>
             <td>'. $row['price'] . '</td>
             <td>'. $row['quantity'] . '</td>
             <td>'. $row['size'] . '</td>
             <td>'. $row['color'] . '</td>
             <td>'. $row['sleeve'] . '</td>
-            <td> <input type="radio" name="purchase_item" value="'. $cart[$i] . '"> </td>
+            <td> <input type="radio" name="purchase_item"> </td>
           </tr>';
         $i++;
       }
