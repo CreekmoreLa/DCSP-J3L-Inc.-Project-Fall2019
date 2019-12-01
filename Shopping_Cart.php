@@ -35,49 +35,28 @@
 
 <?php
 
-class shopping_cart {
+  require_once('login.php');
 
-  public $shopping_cart;
-
-  public function shopping_cart($shirtID) {
-    $shopping_cart = array($shirtID);
-    return $shopping_cart;
-  }
-
-  public function add_item($shirtID)
-  {
-    array_push($shopping_cart, $shirtID);
-  }
-
-  public function remove_item($shirtID)
-  {
-    foreach (array_keys($shopping_cart, $shirtID) as $value) {
-      unset($shopping_cart[$key]);
-    }
-    $shopping_cart = array_values($shopping_cart);
-  }
-
-  public function view_item($shirtID)
-  {
-    return $shopping_cart[shirtID];
-  }
-
-  public function purchase($shirtID)
-  {
-    foreach ($shopping_cart as $value) {
-      unset($shopping_cart[$value]);
-    }
-
-}
-
-}
+  $conn = new mysqli($hn, $un, $pw, $db);
+  if ($conn->connect_error)
+      die($conn->connect_error);
 
   $item_to_add = $_POST["add_to_cart"];
-  if(!isset($_SESSION["Cart"])){
+
+  if (!isset($_SESSION["Cart"]) && $item_to_add != null) {
     $_SESSION["Cart"] = array($item_to_add);
   }
-  else {
+
+  else if (isset($_SESSION["Cart"]) && $item_to_add != null) {
     array_push($_SESSION["Cart"], $item_to_add);
+  }
+
+  else if (!$_SESSION['Logged in as User'] || !$_SESSION['Logged in as Admin']) {
+    echo "You must login before you can add items to your cart!";
+  }
+
+  else if (!isset($_POST["add_to_cart"]) && (empty($_POST["add_to_cart"]))) {
+    echo "You must add to cart first!";
   }
 
     echo '
@@ -91,12 +70,6 @@ class shopping_cart {
         <th colspan="1">Sleeve Length</th>
         <th colspan="1">Purchase?</th>
       </tr>';
-
-      require_once('login.php');
-
-      $conn = new mysqli($hn, $un, $pw, $db);
-      if ($conn->connect_error)
-          die($conn->connect_error);
 
       $arrayLength = count($_SESSION["Cart"]);
       $i = 0;
