@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `INVENTORY` (
   `quantity` int(11) NOT NULL,
   `size` varchar(20) DEFAULT NULL,
   `color` varchar(20) DEFAULT NULL,
-  `sleeve` varchar(10) NOT NULL,
+  `sleeve` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `INVENTORY` (
 --
 
 INSERT INTO `INVENTORY` (`shirtID`, `price`, `quantity`, `size`, `color`, `sleeve`) VALUES
-('000021', 10.00, 7, 'XXX-Large', 'Black', 'short'),
+('000021', 10.55, 7, 'XXX-Large', 'Black', 'short'),
 ('000069', 12.69, 13, 'XX-Large', 'Teal', 'long'),
 ('000121', 13.45, 22, 'Large', 'Maroon', 'long'),
 ('000123', 25.99, 13, 'Small', 'Blue', 'short'),
@@ -75,7 +75,7 @@ INSERT INTO `INVENTORY` (`shirtID`, `price`, `quantity`, `size`, `color`, `sleev
 ('000382', 7.99, 7, 'Medium', 'Green', 'short'),
 ('000412', 21.99, 20, 'X-Large', 'Red', 'long'),
 ('000567', 6.79, 4, 'Small', 'White', 'long'),
-('042069', 16.00, 5, 'Medium', 'Yellow', 'short');
+('042069', 16.75, 5, 'Medium', 'Yellow', 'short');
 
 -- --------------------------------------------------------
 
