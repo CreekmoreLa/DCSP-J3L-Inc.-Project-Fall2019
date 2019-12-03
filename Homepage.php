@@ -70,7 +70,7 @@
         echo '
         <table style="margin-left:auto;margin-right:auto;">
           <tr>
-            <th colspan="1">ShirtID</th>
+            <th colspan="1">Item #</th>
             <th colspan="1">Price</th>
             <th colspan="1">Quantity</th>
             <th colspan="1">Size</th>

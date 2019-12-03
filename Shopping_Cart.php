@@ -58,7 +58,7 @@
   }
 
   else if ((!isset($_POST["add_to_cart"]) && (empty($_POST["add_to_cart"]))) && $cart_size == 0) {
-    echo "You must add to cart first!<br>";
+    echo "You must <a href=\"Homepage.php\">add to cart</a> first!<br>";
 
   }
 
@@ -79,7 +79,7 @@ function Display_Cart() {
   echo '
   <table>
     <tr>
-      <th colspan="1">ShirtID</th>
+      <th colspan="1">Item #</th>
       <th colspan="1">Price</th>
       <th colspan="1">Quantity</th>
       <th colspan="1">Size</th>
