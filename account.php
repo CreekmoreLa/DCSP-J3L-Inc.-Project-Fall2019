@@ -46,18 +46,18 @@
 
           if ($_SESSION['Logged in as User'] = true)
           {
-            echo 'Welcome to your Account Page, user ' . $row[user_name] . '!<br><br>';
-            echo 'Rewards Points: ' . $row[reward_points] .'<br><br>';
-            echo 'Mailing Address: ' . $row[mail_address] .'<br><br>';
-            echo 'Credit Card info: ' . $row[cc_num] .'<br><br>';
+            echo '<h3>Welcome to your Account Page, ' . $row[user_name] . '!</h3><br>';
+            echo '<h3>Rewards Points: ' . $row[reward_points] .'</h3><br>';
+            echo '<h3>Mailing Address: ' . $row[mail_address] .'</h3><br>';
+            echo '<h3>Credit Card info: ' . $row[cc_num] .'<h3><br>';
           }
 
           else if ($_SESSION['Logged in as Admin'] = true)
           {
-            echo 'Welcome to your Account Page, admin ' . $row[user_name] . '!<br><br>';
-            echo 'Rewards Points: ' . $row[reward_points] .'<br><br>';
-            echo 'Mailing Address: ' . $row[mail_address] .'<br><br>';
-            echo 'Credit Card info: ' . $row[cc_num] .'<br><br>';
+            echo '<h3>Welcome to your Account Page, ' . $row[user_name] . '!</h3><br>';
+            echo '<h3>Rewards Points: ' . $row[reward_points] .'</h3><br>';
+            echo '<h3>Mailing Address: ' . $row[mail_address] .'</h3><br>';
+            echo '<h3>Credit Card info: ' . $row[cc_num] .'<h3><br>';
           }
         }
       }

@@ -124,7 +124,7 @@ function Display_Cart() {
           $item_to_purchase = $_POST["purchase_item"];
           $init_var = false;
           $_SESSION["Cart"] = array();
-          echo "<br>Success: Purchase Complete!<br>";
+          echo "<br>Success: Purchase Complete! Your cart is now empty!<br>";
       }
 
       else if (!$init_var) {
