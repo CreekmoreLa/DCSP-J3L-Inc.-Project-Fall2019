@@ -38,21 +38,35 @@
 
 
   $item_to_add = $_POST["add_to_cart"];
+  $cart_size = count($_SESSION["Cart"]);
 
-  if (!isset($_SESSION["Cart"]) && $item_to_add != null) {
+  if ((!isset($_SESSION["Cart"]) && $item_to_add != null) && (isset($_SESSION['Logged in as User']) || isset($_SESSION['Logged in as Admin']))) {
     $_SESSION["Cart"] = array($item_to_add);
     Display_Cart();
+
   }
-  else if (isset($_SESSION["Cart"]) && $item_to_add != null) {
+
+  else if ((isset($_SESSION["Cart"]) && $item_to_add != null)  && (isset($_SESSION['Logged in as User']) || isset($_SESSION['Logged in as Admin']))) {
     array_push($_SESSION["Cart"], $item_to_add);
     Display_Cart();
+
   }
-  else if (!$_SESSION['Logged in as User'] || !$_SESSION['Logged in as Admin']) {
-    echo "You must login before you can add items to your cart!";
+
+  else if (!isset($_SESSION['Logged in as User']) && !isset($_SESSION['Logged in as Admin'])) {
+    echo "You must login before you can add items to your cart!<br>";
+
   }
-  else if (!isset($_POST["add_to_cart"]) && (empty($_POST["add_to_cart"]))) {
-    echo "You must add to cart first!";
+
+  else if ((!isset($_POST["add_to_cart"]) && (empty($_POST["add_to_cart"]))) && $cart_size == 0) {
+    echo "You must add to cart first!<br>";
+
   }
+
+  else {
+    Display_Cart();
+
+  }
+
 
 function Display_Cart() {
 
@@ -107,16 +121,13 @@ function Display_Cart() {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       if (isset($_POST["purchase_item"]) && (!empty($_POST["purchase_item"]))) {
-
           $item_to_purchase = $_POST["purchase_item"];
-
           $init_var = false;
-
+          $_SESSION["Cart"] = array();
           echo "<br>Success: Purchase Complete!<br>";
       }
 
       else if (!$init_var) {
-
         echo "<br>Error: Could Not Complete Purchase!<br>";
 
       }

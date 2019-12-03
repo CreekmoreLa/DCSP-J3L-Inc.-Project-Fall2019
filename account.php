@@ -10,10 +10,9 @@
 
 <body style="background-color:#C24641; color:white;">
 
-  <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
-
   <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
 
+  <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
 
   <br> <h1> Welcome to the Account Page of J3L's Shirt Shop! </h1> <br>
 
