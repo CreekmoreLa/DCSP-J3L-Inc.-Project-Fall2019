@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `INVENTORY` (
   `quantity` int(11) NOT NULL,
   `size` varchar(20) DEFAULT NULL,
   `color` varchar(20) DEFAULT NULL,
-  `sleeve` tinyint(1) NOT NULL
+  `sleeve` varchar(10) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -66,16 +66,16 @@ CREATE TABLE IF NOT EXISTS `INVENTORY` (
 --
 
 INSERT INTO `INVENTORY` (`shirtID`, `price`, `quantity`, `size`, `color`, `sleeve`) VALUES
-('000021', 10, 7, 'XXX-Large', 'Black', 0),
-('000069', 12.69, 13, 'XX-Large', 'Teal', 1),
-('000121', 13.45, 22, 'Large', 'Maroon', 1),
-('000123', 25.99, 13, 'Small', 'Blue', 0),
-('000154', 19.99, 19, 'Large', 'Purple', 1),
-('000212', 15.99, 15, 'X-Small', 'Orange', 0),
-('000382', 7.99, 17, 'Medium', 'Green', 0),
-('000412', 21.99, 20, 'X-Large', 'Red', 1),
-('000567', 6.79, 4, 'Small', 'White', 1),
-('042069', 16, 5, 'Medium', 'Yellow', 0);
+('000021', 10.00, 7, 'XXX-Large', 'Black', 'short'),
+('000069', 12.69, 13, 'XX-Large', 'Teal', 'long'),
+('000121', 13.45, 22, 'Large', 'Maroon', 'long'),
+('000123', 25.99, 13, 'Small', 'Blue', 'short'),
+('000154', 19.99, 9, 'Large', 'Purple', 'short'),
+('000212', 15.99, 15, 'X-Small', 'Orange', 'long'),
+('000382', 7.99, 7, 'Medium', 'Green', 'short'),
+('000412', 21.99, 20, 'X-Large', 'Red', 'long'),
+('000567', 6.79, 4, 'Small', 'White', 'long'),
+('042069', 16.00, 5, 'Medium', 'Yellow', 'short');
 
 -- --------------------------------------------------------
 
