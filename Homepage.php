@@ -111,7 +111,8 @@
 
     </form>
 
-    <br><br><br> <input type="button" id="log_out" onclick="document.location.href='logout_page.php'" value="Log Out">
+    <br><br><br>
+    <input type="button" id="log_out" onclick="document.location.href='logout_page.php'" value="Log Out">
     <input type="button" id="log_in" onclick="document.location.href='login_page.php'" value="Log In">
   </div>
 

@@ -53,7 +53,7 @@
   }
 
   else if (!isset($_SESSION['Logged in as User']) && !isset($_SESSION['Logged in as Admin'])) {
-    echo "You must login before you can add items to your cart!<br>";
+    echo "You must <a href=\"login_page.php\">login</a> before you can add items to your cart!<br>";
 
   }
 

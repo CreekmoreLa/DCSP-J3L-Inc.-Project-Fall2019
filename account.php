@@ -36,7 +36,7 @@
 
       if (!isset($_COOKIE['User']) && !isset($_COOKIE['Admin'])) {
 
-        echo 'It looks like you are not currently logged in! Please Log in to view your account information.'; ?>
+        echo 'It looks like you are not currently logged in! Please Log in to view your account information.<br>'; ?>
 
         <br><input type="button" id="log_in" onclick="document.location.href='login_page.php'" value="Log In"><br> <?php
       }
