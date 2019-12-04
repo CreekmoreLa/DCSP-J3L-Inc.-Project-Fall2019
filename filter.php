@@ -14,6 +14,7 @@ if(isset($_POST['valueToSearch']))
   if($count == 0){
     $output = 'There was no search results';
   }
+
 //  else{
   //  while($row = mysqli_fetch_array($query)){
   //    $shirtID = $row['shirtID'];

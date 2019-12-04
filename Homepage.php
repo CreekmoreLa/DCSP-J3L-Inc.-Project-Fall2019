@@ -38,9 +38,9 @@
 
       <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
 
-
+      <form method="post" action="filter.php">
       <input type="text" id="valueToSearch" placeholder="Search for a product... ">
-
+      </form>
       <input type="submit" value = "Submit">
 
   </div>
