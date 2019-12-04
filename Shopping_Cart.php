@@ -53,12 +53,12 @@
   }
 
   else if (!isset($_SESSION['Logged in as User']) && !isset($_SESSION['Logged in as Admin'])) {
-    echo "You must <a href=\"login_page.php\">login</a> before you can add items to your cart!<br>";
+    echo "<h3>You must <a href=\"login_page.php\">login</a> before you can add items to your cart!</h3><br>";
 
   }
 
   else if ((!isset($_POST["add_to_cart"]) && (empty($_POST["add_to_cart"]))) && $cart_size == 0) {
-    echo "You must <a href=\"Homepage.php\">add to cart</a> first!<br>";
+    echo "<h3>You must <a href=\"Homepage.php\">add to cart</a> first!</h3><br>";
 
   }
 

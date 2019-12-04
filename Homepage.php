@@ -39,7 +39,7 @@
       <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
 
 
-      <input type="text" id="valueToSearch" placeholder="Search an Item: ">
+      <input type="text" id="valueToSearch" placeholder="Search for a product... ">
 
       <input type="submit" value = "Submit">
 
