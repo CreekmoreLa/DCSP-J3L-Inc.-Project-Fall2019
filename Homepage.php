@@ -5,7 +5,6 @@
 <head>
 
     <title>J3L's Shirt Shop Home Page</title>
-    <link rel=”stylesheet” type=”text/css” href=”sitelook.css”/>
 
     <style>
         td, th {
@@ -39,10 +38,11 @@
       <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
 
       <form method="post" action="filter.php">
-      <input type="text" id="valueToSearch" placeholder="Search for a product... ">
+      <input type="text" id="valueToSearch" name="valueToSearch" placeholder="Search for a product...">
 
       <input type="submit" value = "Submit">
       </form>
+
   </div>
 
     <div id="homehead">
@@ -104,7 +104,8 @@
               $item_to_add = $_POST["add_to_cart"];
 
           }
-
+          else if (isset($_POST["valueToSearch"]) && (!empty($_POST["valueToSearch"])))
+              $output = $_POST["valueToSearch"];
         }
 
     ?>

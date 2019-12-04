@@ -1,41 +1,90 @@
-<?php
-session_start();
-require_once('login.php');
-$conn = new mysqli($hn, $un, $pw, $db);
-
-$output = '';
-
-if(isset($_POST['valueToSearch']))
-{
-  $searchq = $_POST['valueToSearch'];
-  $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
-  $query = "SELECT shirtID, price, quantity, size, color, sleeve FROM INVENTORY LIKE '%".$valueToSearch."%'";
-  $count = mysqli_num_rows($query);
-  if($count == 0){
-    $output = 'There was no search results';
-  }
-
-//  else{
-  //  while($row = mysqli_fetch_array($query)){
-  //    $shirtID = $row['shirtID'];
-  //    $price = $row['price'];
-  //    $quantity = $row['quantity'];
-  //    $size = $row['size'];
-  //    $color = $row['color'];
-  //    $sleeve = $row['sleeve'];
-
-  //    $output .= '<div>'.$shirtID. ' '.$price. ' '.$quantity. ' '.$size ' '.$color. ' '.$sleeve '</div>';
-  //  }
-  //}
-}
-
-?>
 <!DOCTYPE html>
 <html lang = "en">
 <head>
+
+  <style>
+      td, th {
+      background-color: white;
+      border: 1px solid;
+      text-align: center;
+      padding: 0.5em;
+      }
+
+      tbody {
+      background-color: white;
+      width:25%;
+      text-align: center;
+      }
+      header{
+        text-align: center;
+        background-color: : #B6B6B4;
+      }
+
+  </style>
+
   <title>Search Results</title>
+
 </head>
-<body>
-  <?php print("$output");?>
+
+<body style ="background-color:#C24641; text-align: center;">
+
+  <?php
+
+  require_once('login.php');
+  $conn = new mysqli($hn, $un, $pw, $db);
+  if ($conn->connect_error)
+      die($conn->connect_error);
+
+  $searchq = $_POST['valueToSearch'];
+  $query = "SELECT * FROM INVENTORY WHERE shirtID LIKE '%".$searchq."%' OR price LIKE '%".$searchq."%' OR quantity LIKE '%".$searchq."%' OR size LIKE '%".$searchq."%' OR color LIKE '%".$searchq."%' OR sleeve LIKE '%".$searchq."%'";
+
+  $result = $conn->query($query);
+  $count = mysqli_num_rows($result);
+
+  if ($count == 0) {
+    $output = 'There was no search results';
+    echo "$output";
+
+  }
+
+  else {
+    echo '
+    <table style="margin-left:auto;margin-right:auto;">
+      <tr>
+        <th colspan="1">Item #</th>
+        <th colspan="1">Price</th>
+        <th colspan="1">Quantity</th>
+        <th colspan="1">Size</th>
+        <th colspan="1">Color</th>
+        <th colspan="1">Sleeve Length</th>
+      </tr>';
+
+      while($row = $result->fetch_array()){
+
+          $shirtID = $row['shirtID'];
+          $price = $row['price'];
+          $quantity = $row['quantity'];
+          $size = $row['size'];
+          $color = $row['color'];
+          $sleeve = $row['sleeve'];
+
+          echo '
+            <tr>
+              <td>'. $shirtID . '</td>
+              <td>'. $price . '</td>
+              <td>'. $quantity . '</td>
+              <td>'. $size . '</td>
+              <td>'. $color . '</td>
+              <td>'. $sleeve . '</td>
+            </tr>';
+
+          }
+
+          echo '</table>';
+    }
+
+  ?>
+
 </body>
-<html>
+
+</html>
