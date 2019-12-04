@@ -40,9 +40,9 @@
 
       <form method="post" action="filter.php">
       <input type="text" id="valueToSearch" placeholder="Search for a product... ">
-      </form>
-      <input type="submit" value = "Submit">
 
+      <input type="submit" value = "Submit">
+      </form>
   </div>
 
     <div id="homehead">
