@@ -18,13 +18,12 @@
     ?>
     <body style="background-color:#C24641; color:white; text-align:center;">
       <div id="logoutpg">
-        <h1>Logged Out</h1>
+        <h1>Logged Out</h1><br><br>
+
+        <h3>Thanks for Shopping! <br> You are now logged out of the website!</h3><br><br>
         <p>
-            You are now logged out of the website.
-        </p>
-        <p>
-            <a href="login_page.php">Log in</a> again.
-            <br><br><a href="Homepage.php">Homepage</a>
+            <h3><a href="login_page.php">Log in</a> again.
+            <br><br><a href="Homepage.php">Homepage</a></h3>
         </p>
       </div>
     </body>
