@@ -14,18 +14,18 @@ if(isset($_POST['valueToSearch']))
   if($count == 0){
     $output = 'There was no search results';
   }
-  else{
-    while($row = mysqli_fetch_array($query)){
-      $shirtID = $row['shirtID'];
-      $price = $row['price'];
-      $quantity = $row['quantity'];
-      $size = $row['size'];
-      $color = $row['color'];
-      $sleeve = $row['sleeve'];
+//  else{
+  //  while($row = mysqli_fetch_array($query)){
+  //    $shirtID = $row['shirtID'];
+  //    $price = $row['price'];
+  //    $quantity = $row['quantity'];
+  //    $size = $row['size'];
+  //    $color = $row['color'];
+  //    $sleeve = $row['sleeve'];
 
-      $output .= '<div>'.$shirtID. ' '.$price. ' '.$quantity. ' '.$size ' '.$color. ' '.$sleeve '</div>';
-    }
-  }
+  //    $output .= '<div>'.$shirtID. ' '.$price. ' '.$quantity. ' '.$size ' '.$color. ' '.$sleeve '</div>';
+  //  }
+  //}
 }
 
 ?>
