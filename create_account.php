@@ -73,7 +73,7 @@
         }
 
         if (!isset($_POST["mail_address"]) || empty($_POST["mail_address"])) {
-          $mail_address_error = "You must enter a mail address.";
+          $mail_address_error = "You must enter a mailing address.";
 
         }
 
@@ -97,6 +97,7 @@
     ?>
 
     <form method = "post" action = "create_account.php">
+      
         <br>
         <h3><label>Email: </label> <input type = "text" name = "email" value="<?php echo "$email" ?>"> <span class="error"><?php echo "$email_error" ?></span>
         <br>

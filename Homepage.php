@@ -36,12 +36,14 @@
     <div id="pgbtnhome">
 
       <form method="post" action="filter.php">
+
         <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
 
         <input type="button" id="shopping_cart" onclick="document.location.href='shopping_cart.php'" value="Shopping Cart">
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         <input type="text" id="valueToSearch" name="valueToSearch" placeholder="Search for a product...">
         <input type="submit" value="Search">
+        
       </form>
 
   </div>
