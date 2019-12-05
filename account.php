@@ -21,12 +21,14 @@
       require_once('login.php');
 
       $conn = new mysqli($hn, $un, $pw, $db);
+
       if ($conn->connect_error)
           die($conn->connect_error);
 
       if(isset($_COOKIE["User"])) {
         $email = $_COOKIE['User'];
       }
+
       else if(isset($_COOKIE["Admin"])) {
         $email = $_COOKIE['Admin'];
       }
@@ -35,15 +37,14 @@
       $result = $conn->query($query);
 
       if (!isset($_COOKIE['User']) && !isset($_COOKIE['Admin'])) {
-
         echo "<h3>It looks like you are not currently logged in!<br> <br>Please <a href='login_page.php'>login</a> or <a href='create_account.php'>create an account</a> to view your account information.</h3><br>"; ?>
 
         <br><input type="button" id="log_in" onclick="document.location.href='login_page.php'" value="Log In"><br> <?php
+
       }
 
       else {
         while($row = $result->fetch_array()) {
-
           if ($_SESSION['Logged in as User'] = true) {
             echo '<h3>Welcome to your Account Page, ' . $row[user_name] . '!</h3><br>';
             echo '<h3>Rewards Points: ' . $row[reward_points] .'</h3><br>';

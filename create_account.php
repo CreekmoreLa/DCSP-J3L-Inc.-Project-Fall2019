@@ -43,6 +43,7 @@
 
         else {
           $safe1 = TRUE;
+
         }
 
         if (!isset($_POST["user_name"]) || empty($_POST["user_name"]) || (preg_match("/^[a-zA-Z ]*$/", $_POST["user_name"])) == FALSE) {
@@ -52,6 +53,7 @@
 
         else {
           $safe2 = TRUE;
+
         }
 
         if (!isset($_POST["password"]) || empty($_POST["password"])) {
@@ -61,6 +63,7 @@
 
         else {
           $safe3 = TRUE;
+
         }
 
         if (!isset($_POST["cc_num"]) || empty($_POST["cc_num"]) || (filter_var($_POST["cc_num"], FILTER_VALIDATE_INT) == FALSE) || $_POST["cc_num"] <= 999999999999999) {
@@ -70,6 +73,7 @@
 
         else {
           $safe4 = TRUE;
+
         }
 
         if (!isset($_POST["mail_address"]) || empty($_POST["mail_address"])) {
@@ -79,6 +83,7 @@
 
         else {
           $safe5 = TRUE;
+          
         }
 
         if ($safe1 && $safe2 && $safe3 && $safe4 && $safe5) {
@@ -97,7 +102,7 @@
     ?>
 
     <form method = "post" action = "create_account.php">
-      
+
         <br>
         <h3><label>Email: </label> <input type = "text" name = "email" value="<?php echo "$email" ?>"> <span class="error"><?php echo "$email_error" ?></span>
         <br>

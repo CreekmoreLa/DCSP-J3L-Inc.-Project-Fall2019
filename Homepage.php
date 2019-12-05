@@ -43,7 +43,7 @@
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         <input type="text" id="valueToSearch" name="valueToSearch" placeholder="Search for a product...">
         <input type="submit" value="Search">
-        
+
       </form>
 
   </div>
@@ -103,12 +103,15 @@
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-          if (isset($_POST["add_to_cart"]) && (!empty($_POST["add_to_cart"]))) {
-              $item_to_add = $_POST["add_to_cart"];
+            if (isset($_POST["add_to_cart"]) && (!empty($_POST["add_to_cart"]))) {
+                $item_to_add = $_POST["add_to_cart"];
 
-          }
-          else if (isset($_POST["valueToSearch"]) && (!empty($_POST["valueToSearch"])))
-              $output = $_POST["valueToSearch"];
+            }
+
+            else if (isset($_POST["valueToSearch"]) && (!empty($_POST["valueToSearch"]))) {
+                $output = $_POST["valueToSearch"];
+            }
+              
         }
 
     ?>
