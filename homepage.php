@@ -31,6 +31,7 @@
 </head>
 
 <body style ="background-color:#C24641; text-align: center;">
+  
   <div id="homecontain">
 
     <div id="pgbtnhome">
@@ -111,7 +112,7 @@
             else if (isset($_POST["valueToSearch"]) && (!empty($_POST["valueToSearch"]))) {
                 $output = $_POST["valueToSearch"];
             }
-              
+
         }
 
     ?>
