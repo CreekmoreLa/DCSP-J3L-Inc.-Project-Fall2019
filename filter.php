@@ -3,6 +3,7 @@
 <head>
 
   <style>
+
       td, th {
       background-color: white;
       border: 1px solid;
@@ -15,9 +16,10 @@
       width:25%;
       text-align: center;
       }
-      header{
-        text-align: center;
-        background-color: : #B6B6B4;
+
+      header {
+      text-align: center;
+      background-color: : #B6B6B4;
       }
 
   </style>
@@ -28,6 +30,10 @@
 
 <body style ="background-color:#C24641; text-align: center;">
 
+  <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
+
+  <br> <h1 style="background-color:#C24641; color:white;">Search Results: </h1> <br>
+
   <?php
 
   require_once('login.php');
@@ -36,13 +42,16 @@
       die($conn->connect_error);
 
   $searchq = $_POST['valueToSearch'];
-  $query = "SELECT * FROM INVENTORY WHERE shirtID LIKE '%".$searchq."%' OR price LIKE '%".$searchq."%' OR quantity LIKE '%".$searchq."%' OR size LIKE '%".$searchq."%' OR color LIKE '%".$searchq."%' OR sleeve LIKE '%".$searchq."%'";
+  $query = "SELECT * FROM INVENTORY WHERE shirtID LIKE '%".$searchq."%'
+            OR price LIKE '%".$searchq."%' OR quantity LIKE '%".$searchq."%'
+            OR size LIKE '%".$searchq."%' OR color LIKE '%".$searchq."%'
+            OR sleeve LIKE '%".$searchq."%'";
 
   $result = $conn->query($query);
   $count = mysqli_num_rows($result);
 
   if ($count == 0) {
-    $output = 'There was no search results';
+    $output = '<h3>There is no inventory that matches your search! Please try your search again.</h3>';
     echo "$output";
 
   }

@@ -7,6 +7,7 @@
     <title>J3L's Shirt Shop Home Page</title>
 
     <style>
+
         td, th {
         background-color: white;
         border: 1px solid;
@@ -19,9 +20,10 @@
         width:25%;
         text-align: center;
         }
-        header{
-          text-align: center;
-          background-color: : #B6B6B4;
+
+        header {
+        text-align: center;
+        background-color: : #B6B6B4;
         }
 
     </style>
@@ -33,14 +35,13 @@
 
     <div id="pgbtnhome">
 
-      <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
-
-      <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
-
       <form method="post" action="filter.php">
-      <input type="text" id="valueToSearch" name="valueToSearch" placeholder="Search for a product...">
+        <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
 
-      <input type="submit" value = "Submit">
+        <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
+
+        <input type="text" id="valueToSearch" name="valueToSearch" placeholder="Search for a product...">
+        <input type="submit" value="Search">
       </form>
 
   </div>

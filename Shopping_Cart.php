@@ -7,6 +7,7 @@
     <title>Shopping Cart</title>
 
     <style>
+
         td, th {
         border: 1px solid;
         text-align: center;
@@ -16,6 +17,7 @@
         tbody {
         width:25%
         }
+        
     </style>
 
 </head>
