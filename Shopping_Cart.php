@@ -17,7 +17,7 @@
         tbody {
         width:25%
         }
-        
+
     </style>
 
 </head>
@@ -25,7 +25,7 @@
 <body style="background-color:#C24641; color:white;">
 
   <div id="shcrtbtns">
-    <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
+    <input type="button" id="home_page" onclick="document.location.href='homepage.php'" value="Back to Homepage">
     <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page"> <br>
   </div>
 
@@ -33,7 +33,7 @@
     <br> <h1 style="background-color:#C24641; color:white;">J3L's Shirt Shop Shopping Cart View</h1> <br>
   </div>
 
-  <form method="post" action="Shopping_Cart.php">
+  <form method="post" action="shopping_cart.php">
 
 <?php
 
@@ -60,7 +60,7 @@
   }
 
   else if ((!isset($_POST["add_to_cart"]) && (empty($_POST["add_to_cart"]))) && $cart_size == 0) {
-    echo "<h3>You must <a href=\"Homepage.php\">add to cart</a> first!</h3><br>";
+    echo "<h3>You must <a href=\"homepage.php\">add to cart</a> first!</h3><br>";
 
   }
 

@@ -1,12 +1,14 @@
 <!DOCTYPE HTML>
 <html lang = "en">
+<head>
 
+    <title> Create Your Account </title>
 
 </head>
 
 <body style="background-color:#C24641; color:white; text-align:center;">
 
-  <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
+  <input type="button" id="home_page" onclick="document.location.href='homepage.php'" value="Back to Homepage">
 
   <br> <h1 style="background-color:#C24641; color:white; text-align:center;"> Create an account here: </h1> <br>
 
@@ -91,6 +93,7 @@
         }
 
     }
+
     ?>
 
     <form method = "post" action = "create_account.php">

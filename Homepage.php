@@ -38,8 +38,8 @@
       <form method="post" action="filter.php">
         <input type="button" id="account_page" onclick="document.location.href='account.php'" value="Account Page">
 
-        <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
-
+        <input type="button" id="shopping_cart" onclick="document.location.href='shopping_cart.php'" value="Shopping Cart">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         <input type="text" id="valueToSearch" name="valueToSearch" placeholder="Search for a product...">
         <input type="submit" value="Search">
       </form>
@@ -55,7 +55,7 @@
 
     <h2 style="background-color:#C24641; color:white; text-align: center;"> These are the shirts that we currently have in stock: </h2> <br>
 
-    <form method="post" action="Shopping_Cart.php">
+    <form method="post" action="shopping_cart.php">
 
     <?php
 

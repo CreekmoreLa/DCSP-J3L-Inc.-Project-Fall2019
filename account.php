@@ -10,9 +10,9 @@
 
 <body style="background-color:#C24641; color:white;">
 
-  <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
+  <input type="button" id="home_page" onclick="document.location.href='homepage.php'" value="Back to Homepage">
 
-  <input type="button" id="shopping_cart" onclick="document.location.href='Shopping_Cart.php'" value="Shopping Cart">
+  <input type="button" id="shopping_cart" onclick="document.location.href='shopping_cart.php'" value="Shopping Cart">
 
   <br> <h1> Welcome to the Account Page of J3L's Shirt Shop! </h1> <br>
 
@@ -44,23 +44,24 @@
       else {
         while($row = $result->fetch_array()) {
 
-          if ($_SESSION['Logged in as User'] = true)
-          {
+          if ($_SESSION['Logged in as User'] = true) {
             echo '<h3>Welcome to your Account Page, ' . $row[user_name] . '!</h3><br>';
             echo '<h3>Rewards Points: ' . $row[reward_points] .'</h3><br>';
             echo '<h3>Mailing Address: ' . $row[mail_address] .'</h3><br>';
             echo '<h3>Credit Card info: ' . $row[cc_num] .'<h3><br>';
+
           }
 
-          else if ($_SESSION['Logged in as Admin'] = true)
-          {
+          else if ($_SESSION['Logged in as Admin'] = true) {
             echo '<h3>Welcome to your Account Page, ' . $row[user_name] . '!</h3><br>';
             echo '<h3>Rewards Points: ' . $row[reward_points] .'</h3><br>';
             echo '<h3>Mailing Address: ' . $row[mail_address] .'</h3><br>';
             echo '<h3>Credit Card info: ' . $row[cc_num] .'<h3><br>';
+
           }
         }
       }
+
   ?>
 
 </body>

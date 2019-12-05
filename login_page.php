@@ -12,7 +12,7 @@
     </head>
     <body style="background-color:#C24641; color:white; text-align:center;">
 
-      <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
+      <input type="button" id="home_page" onclick="document.location.href='homepage.php'" value="Back to Homepage">
 
         <?php
 
@@ -24,11 +24,11 @@
         require_once('login.php');
 
         if (isset($_SESSION['Logged in as User']) && !(empty($_SESSION['Logged in as User']))) {
-          header("Location: Homepage.php");
+          header("Location: homepage.php");
         }
 
         else if (isset($_SESSION['Logged in as Admin']) && !(empty($_SESSION['Logged in as Admin']))) {
-          header("Location: Homepage.php");
+          header("Location: homepage.php");
         }
 
         $connection = new mysqli($hn, $un, $pw, $db);
@@ -50,14 +50,14 @@
                     $cookie_name = 'User';
                     setcookie($cookie_name, $email);
                     $_SESSION['Logged in as User'] = true;
-                    header("Location: Homepage.php");
+                    header("Location: homepage.php");
                 }
 
                 else if (($password == $row['password']) && ($password == 'makemeadmin')) {
                     $cookie_name = 'Admin';
                     setcookie($cookie_name, $email);
                     $_SESSION['Logged in as Admin'] = true;
-                    header("Location: Homepage.php");
+                    header("Location: homepage.php");
                 }
 
                 else {
@@ -89,7 +89,7 @@
         <div id="movpgbtn">
           <p style="font-style:italic"><br>
             <h3>Click <a href="create_account.php">here</a> to create an account.</h3>
-            <h3>Or simply visit our homepage as a guest by clicking <a href="Homepage.php">here</a>.</h3>
+            <h3>Or simply visit our homepage as a guest by clicking <a href="homepage.php">here</a>.</h3>
           </p>
         </div>
       </body>

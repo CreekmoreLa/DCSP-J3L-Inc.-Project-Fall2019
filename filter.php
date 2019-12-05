@@ -30,7 +30,7 @@
 
 <body style ="background-color:#C24641; text-align: center;">
 
-  <input type="button" id="home_page" onclick="document.location.href='Homepage.php'" value="Back to Homepage">
+  <input type="button" id="home_page" onclick="document.location.href='homepage.php'" value="Back to Homepage">
 
   <br> <h1 style="background-color:#C24641; color:white;">Search Results: </h1> <br>
 
@@ -51,7 +51,7 @@
   $count = mysqli_num_rows($result);
 
   if ($count == 0) {
-    $output = '<h3>There is no inventory that matches your search! Please try your search again.</h3>';
+    $output = '<h3 style="background-color:#C24641; color:white;">There is no inventory that matches your search! <br> Please try your search again.</h3>';
     echo "$output";
 
   }
